@@ -523,6 +523,101 @@ body{font-family:'Sarabun',system-ui,sans-serif;background:#0d0805;color:var(--t
   .compare-hint{margin:0 12px 0}
   .weather-stats{grid-template-columns:1fr 1fr 1fr}
 }
+
+/* ─── PLAN DESIGNER (replaces itinerary tab) ─── */
+.plan-type-row{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap}
+.plan-type-btn{flex:1;min-width:0;display:flex;flex-direction:column;align-items:center;gap:3px;padding:11px 8px;background:var(--cream-dark);border:2px solid transparent;border-radius:14px;cursor:pointer;font-family:'Sarabun',sans-serif;transition:all .2s}
+.plan-type-btn:hover{border-color:var(--gold);background:#fff}
+.plan-type-btn.active{border-color:var(--gold);background:#fff;box-shadow:0 0 0 3px rgba(245,158,11,.15)}
+.plan-type-icon{font-size:1.3rem}
+.plan-type-label{font-size:.72rem;font-weight:700;color:var(--teak);text-align:center;line-height:1.3}
+.plan-type-nights{font-size:.62rem;color:var(--sand);text-align:center}
+.plan-body{opacity:0;transform:translateY(8px);animation:planIn .35s ease forwards}
+@keyframes planIn{to{opacity:1;transform:translateY(0)}}
+.plan-route-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.plan-route-title{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:700;color:var(--teak)}
+.btn-plan-maps{display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#0ea5e9,#0284c7);color:#fff;border:none;border-radius:100px;padding:7px 14px;font-family:'Sarabun',sans-serif;font-size:.75rem;font-weight:700;cursor:pointer;text-decoration:none;transition:opacity .2s;white-space:nowrap}
+.btn-plan-maps:hover{opacity:.85}
+.plan-day-card{background:#fff;border-radius:16px;margin-bottom:12px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.06)}
+.plan-day-header{background:linear-gradient(135deg,var(--teak),var(--teak-700));padding:10px 14px;display:flex;align-items:center;justify-content:space-between}
+.plan-day-label{color:#fde68a;font-family:'Cormorant Garamond',serif;font-weight:700;font-size:.95rem}
+.plan-day-type{color:rgba(253,230,138,.5);font-size:.68rem;letter-spacing:1px;text-transform:uppercase}
+.plan-day-body{padding:12px 14px}
+.plan-event{display:flex;gap:10px;margin-bottom:9px;align-items:flex-start}
+.plan-event:last-child{margin-bottom:0}
+.plan-event-time{background:rgba(245,158,11,.12);color:var(--gold-dark);border-radius:8px;padding:3px 8px;font-size:.68rem;font-weight:700;flex-shrink:0;min-width:52px;text-align:center;margin-top:2px}
+.plan-event-text{font-size:.83rem;color:#374151;line-height:1.55}
+.plan-event-map{flex-shrink:0;margin-top:2px}
+.plan-event-map a{display:flex;align-items:center;justify-content:center;width:26px;height:26px;background:linear-gradient(135deg,#0ea5e9,#0284c7);border-radius:50%;color:#fff;text-decoration:none;transition:opacity .2s}
+.plan-event-map a:hover{opacity:.8}
+.plan-divider{height:1px;background:rgba(0,0,0,.05);margin:10px 0}
+.plan-tip{background:linear-gradient(135deg,#f0fdf4,#dcfce7);border:1px solid #bbf7d0;border-radius:12px;padding:10px 13px;margin-top:12px;display:flex;gap:8px;align-items:flex-start}
+.plan-tip-icon{font-size:.9rem;flex-shrink:0;margin-top:1px}
+.plan-tip-text{font-size:.78rem;color:#15803d;line-height:1.6}
+.plan-action-row{display:flex;gap:8px;margin-top:14px}
+.plan-action-row .btn-download{flex:1;margin-top:0;font-size:.82rem;padding:11px}
+
+/* ─── TOP-5 ACTIVITY MAPS (in overview) ─── */
+.activity-item .act-maps-btn{margin-left:auto;flex-shrink:0;display:flex;align-items:center;justify-content:center;width:28px;height:28px;background:linear-gradient(135deg,#0ea5e9,#0284c7);border-radius:50%;color:#fff;text-decoration:none;transition:opacity .2s;border:none;cursor:pointer}
+.activity-item .act-maps-btn:hover{opacity:.8}
+
+@media(max-width:600px){
+  .plan-type-btn{padding:9px 5px}
+  .plan-type-icon{font-size:1.1rem}
+  .plan-type-label{font-size:.65rem}
+  .plan-type-nights{font-size:.58rem}
+  .plan-day-header{padding:8px 12px}
+  .plan-event-time{min-width:44px;font-size:.63rem}
+}
+
+/* ─── FILTER BAR ─── */
+.filter-bar{background:#fff;border-bottom:1px solid rgba(0,0,0,.07);padding:0;position:sticky;top:var(--nav-h);z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.05)}
+.filter-bar-inner{max-width:1200px;margin:0 auto;padding:0 40px}
+.filter-scroll{display:flex;gap:0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;border-bottom:2px solid transparent}
+.filter-scroll::-webkit-scrollbar{display:none}
+.filter-group{display:flex;align-items:stretch;gap:0;flex-shrink:0;border-right:1px solid rgba(0,0,0,.06)}
+.filter-group:last-child{border-right:none}
+.filter-group-label{font-size:.62rem;font-weight:700;color:var(--sand);letter-spacing:1.5px;text-transform:uppercase;padding:6px 12px 3px;display:block}
+.filter-chips{display:flex;gap:5px;padding:4px 10px 10px;flex-wrap:nowrap}
+.filter-chip{display:inline-flex;align-items:center;gap:4px;padding:5px 12px;border-radius:100px;border:1.5px solid rgba(0,0,0,.1);background:#fff;color:var(--sand);font-size:.74rem;font-weight:600;cursor:pointer;white-space:nowrap;transition:all .18s;font-family:'Sarabun',sans-serif;flex-shrink:0}
+.filter-chip:hover{border-color:var(--gold);color:var(--teak);background:#fefdf9}
+.filter-chip.active{background:var(--teak);border-color:var(--teak);color:#fde68a}
+.filter-chip.active:hover{background:var(--teak-700)}
+.filter-chip-icon{font-size:.8rem;line-height:1}
+.filter-reset{display:inline-flex;align-items:center;gap:4px;padding:5px 10px;border-radius:100px;border:1.5px solid rgba(239,68,68,.25);background:#fff;color:#ef4444;font-size:.72rem;font-weight:600;cursor:pointer;white-space:nowrap;transition:all .18s;font-family:'Sarabun',sans-serif;margin-left:auto;flex-shrink:0}
+.filter-reset:hover{background:#fee2e2;border-color:#ef4444}
+.filter-reset.hidden{display:none}
+/* Results summary bar */
+.results-summary{max-width:1200px;margin:0 auto;padding:10px 40px 0;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.results-count{color:var(--sand);font-size:.82rem}
+.results-count strong{color:var(--teak);font-weight:700}
+/* View toggle */
+.view-toggle{display:flex;gap:2px;background:var(--cream-dark);border-radius:10px;padding:3px}
+.view-btn{width:30px;height:30px;border:none;border-radius:8px;background:transparent;color:var(--sand);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .18s;flex-shrink:0}
+.view-btn.active{background:#fff;color:var(--teak);box-shadow:0 1px 4px rgba(0,0,0,.12)}
+/* List view for cards */
+#cards-wrap.list-view{grid-template-columns:1fr!important}
+#cards-wrap.list-view .dest-card{display:grid;grid-template-columns:220px 1fr;max-height:200px}
+#cards-wrap.list-view .dest-card-hero{height:auto;min-height:160px}
+#cards-wrap.list-view .dest-tagline{-webkit-line-clamp:2;display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden}
+/* No results */
+.filter-no-results{text-align:center;padding:56px 24px;color:var(--sand);grid-column:1/-1}
+.filter-no-results-icon{font-size:2.5rem;margin-bottom:12px;opacity:.35}
+.filter-no-results-text{font-size:.9rem;line-height:1.7}
+.filter-no-results-btn{display:inline-flex;align-items:center;gap:6px;margin-top:14px;padding:9px 18px;background:var(--teak);color:#fde68a;border:none;border-radius:100px;font-family:'Sarabun',sans-serif;font-weight:600;font-size:.82rem;cursor:pointer}
+
+@media(max-width:768px){
+  .filter-bar-inner{padding:0 14px}
+  .results-summary{padding:8px 14px 0}
+}
+@media(max-width:600px){
+  #cards-wrap.list-view{grid-template-columns:1fr!important}
+  #cards-wrap.list-view .dest-card{display:flex;flex-direction:column;max-height:none}
+  #cards-wrap.list-view .dest-card-hero{height:185px}
+  .filter-group-label{font-size:.58rem;padding:5px 8px 2px}
+  .filter-chips{padding:3px 6px 8px;gap:4px}
+  .filter-chip{font-size:.68rem;padding:4px 10px}
+}
   </style>
 </head>
 <body>
@@ -646,10 +741,86 @@ body{font-family:'Sarabun',system-ui,sans-serif;background:#0d0805;color:var(--t
         <span data-i18n="nav.newpick">New Pick</span>
       </button>
     </div>
-    <div class="page-header-inner" style="padding-top:5px">
-      <p class="results-meta" id="results-meta"></p>
+  </div>
+
+  <!-- ── FILTER BAR ── -->
+  <div class="filter-bar" id="filter-bar">
+    <div class="filter-bar-inner">
+      <div class="filter-scroll" id="filter-scroll">
+
+        <!-- Region -->
+        <div class="filter-group">
+          <span class="filter-group-label" data-i18n="filter.region">Region</span>
+          <div class="filter-chips" id="chips-region"></div>
+        </div>
+
+        <!-- Budget -->
+        <div class="filter-group">
+          <span class="filter-group-label" data-i18n="filter.budget">Budget</span>
+          <div class="filter-chips">
+            <button class="filter-chip" data-filter="budget" data-val="1" onclick="toggleFilter('budget','1',this)">
+              <span class="filter-chip-icon">💵</span> $
+            </button>
+            <button class="filter-chip" data-filter="budget" data-val="2" onclick="toggleFilter('budget','2',this)">
+              <span class="filter-chip-icon">💵</span> $$
+            </button>
+            <button class="filter-chip" data-filter="budget" data-val="3" onclick="toggleFilter('budget','3',this)">
+              <span class="filter-chip-icon">💵</span> $$$
+            </button>
+          </div>
+        </div>
+
+        <!-- Season -->
+        <div class="filter-group">
+          <span class="filter-group-label" data-i18n="filter.season">Season</span>
+          <div class="filter-chips">
+            <button class="filter-chip" data-filter="season" data-val="cool" onclick="toggleFilter('season','cool',this)">
+              <span class="filter-chip-icon">❄️</span> <span data-i18n="season.cool">Cool</span>
+            </button>
+            <button class="filter-chip" data-filter="season" data-val="hot" onclick="toggleFilter('season','hot',this)">
+              <span class="filter-chip-icon">☀️</span> <span data-i18n="season.hot">Hot</span>
+            </button>
+            <button class="filter-chip" data-filter="season" data-val="rainy" onclick="toggleFilter('season','rainy',this)">
+              <span class="filter-chip-icon">🌧️</span> <span data-i18n="season.rainy">Rainy</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Eco -->
+        <div class="filter-group">
+          <span class="filter-group-label" data-i18n="filter.eco">Green</span>
+          <div class="filter-chips">
+            <button class="filter-chip" data-filter="eco" data-val="true" onclick="toggleFilter('eco','true',this)">
+              <span class="filter-chip-icon">🌿</span> <span data-i18n="eco.label">Green Choice</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Reset -->
+        <div class="filter-group" style="border:none;padding-right:0;align-self:flex-end;padding-bottom:10px">
+          <button class="filter-reset hidden" id="filter-reset-btn" onclick="resetFilters()">
+            <i data-lucide="x" style="width:12px;height:12px"></i>
+            <span data-i18n="filter.reset">Clear</span>
+          </button>
+        </div>
+
+      </div>
     </div>
   </div>
+
+  <!-- ── RESULTS SUMMARY + VIEW TOGGLE ── -->
+  <div class="results-summary">
+    <p class="results-count" id="results-count"></p>
+    <div class="view-toggle">
+      <button class="view-btn active" id="view-grid" onclick="setView('grid')" title="Grid view">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+      </button>
+      <button class="view-btn" id="view-list" onclick="setView('list')" title="List view">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+
   <div class="cards-wrap" id="cards-wrap" role="list"></div>
   <footer class="site-footer"><p class="site-footer-brand"><span>Thai</span>Vibe Explorer &nbsp;&middot;&nbsp; <span data-i18n="footer.copy">All destinations are 100% Thailand</span></p><p class="site-footer-disclaimer">This project is for <strong style="color:rgba(253,230,138,.28)">demonstration purposes only</strong>. Destination information, weather data, PM 2.5 readings, and carbon estimates are simulated and should not be used for real travel planning. All photographs are sourced from <a href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a> and remain the property of their respective photographers. Map links open Google Maps. No API keys are stored or transmitted by this page.</p></footer>
 </section>
@@ -746,12 +917,8 @@ body{font-family:'Sarabun',system-ui,sans-serif;background:#0d0805;color:var(--t
         <span data-i18n="modal.tab1">Overview</span>
       </button>
       <button class="tab-btn inactive" id="tab-itinerary" onclick="switchTab('itinerary')">
-        <i data-lucide="route" style="width:13px;height:13px"></i>
-        <span data-i18n="modal.tab2">2D1N Plan</span>
-      </button>
-      <button class="tab-btn inactive" id="tab-map" onclick="switchTab('map')">
-        <i data-lucide="map-pin" style="width:13px;height:13px"></i>
-        <span data-i18n="modal.tab3">Map</span>
+        <i data-lucide="calendar-days" style="width:13px;height:13px"></i>
+        <span data-i18n="modal.tab2">Trip Planner</span>
       </button>
       <button class="tab-btn inactive" id="tab-caption" onclick="switchTab('caption')">
         <i data-lucide="sparkles" style="width:13px;height:13px"></i>
@@ -765,39 +932,35 @@ body{font-family:'Sarabun',system-ui,sans-serif;background:#0d0805;color:var(--t
     <div class="modal-body">
       <div id="panel-overview">
         <p class="modal-desc" id="modal-desc"></p>
-        <p class="section-heading" id="section-activities" data-i18n="modal.activities">Top 3 Must-Do Activities</p>
+        <p class="section-heading" id="section-activities" data-i18n="modal.activities">Top 5 Must-Do Activities</p>
         <div id="modal-activities"></div>
       </div>
       <div id="panel-itinerary" style="display:none">
-        <p style="color:var(--sand);font-size:.82rem;margin-bottom:18px" data-i18n="modal.itin.intro">A perfect 2 Days, 1 Night itinerary &#10024;</p>
-        <div class="itin-day">
-          <span class="itin-day-label" data-i18n="modal.day1">Day 1</span>
-          <div class="itin-track" id="itin-day1"></div>
+        <!-- Plan type selector -->
+        <div class="plan-type-row" id="plan-type-row">
+          <button class="plan-type-btn active" data-plan="daytrip" onclick="selectPlanType('daytrip',this)">
+            <span class="plan-type-icon">🌅</span>
+            <span class="plan-type-label" data-i18n="plan.daytrip">Day Trip</span>
+            <span class="plan-type-nights" data-i18n="plan.night.0">(no overnight)</span>
+          </button>
+          <button class="plan-type-btn" data-plan="2d1n" onclick="selectPlanType('2d1n',this)">
+            <span class="plan-type-icon">🌙</span>
+            <span class="plan-type-label" data-i18n="plan.2d1n">2D 1N</span>
+            <span class="plan-type-nights" data-i18n="plan.night.1">(1 night)</span>
+          </button>
+          <button class="plan-type-btn" data-plan="3d2n" onclick="selectPlanType('3d2n',this)">
+            <span class="plan-type-icon">✨</span>
+            <span class="plan-type-label" data-i18n="plan.3d2n">3D 2N</span>
+            <span class="plan-type-nights" data-i18n="plan.night.2">(2 nights)</span>
+          </button>
+          <button class="plan-type-btn" data-plan="4d3n" onclick="selectPlanType('4d3n',this)">
+            <span class="plan-type-icon">🗺️</span>
+            <span class="plan-type-label" data-i18n="plan.4d3n">4D 3N</span>
+            <span class="plan-type-nights" data-i18n="plan.night.3">(3 nights)</span>
+          </button>
         </div>
-        <div class="itin-day">
-          <span class="itin-day-label" data-i18n="modal.day2">Day 2</span>
-          <div class="itin-track" id="itin-day2"></div>
-        </div>
-        <button class="btn-download" onclick="openShareCard()">
-          <i data-lucide="download" style="width:17px;height:17px"></i>
-          <span data-i18n="modal.download">Download Itinerary Card</span>
-        </button>
-      </div>
-      <div id="panel-map" style="display:none">
-        <div class="map-visual">
-          <img id="map-bg-img" src="" alt=""/>
-          <div class="map-overlay">
-            <div class="map-pin">&#128205;</div>
-            <div class="map-dname" id="map-dname"></div>
-            <div class="map-dreg" id="map-dreg"></div>
-          </div>
-        </div>
-        <p class="section-heading" style="margin-top:4px" data-i18n="modal.hotspots">Activity Hotspots</p>
-        <div id="map-hotspots"></div>
-        <a id="map-gmaps-link" href="#" target="_blank" rel="noopener" class="btn-maps">
-          <i data-lucide="external-link" style="width:15px;height:15px"></i>
-          <span data-i18n="modal.openmap">Open in Google Maps</span>
-        </a>
+        <!-- Plan body rendered by JS -->
+        <div id="plan-body"></div>
       </div>
       <div id="panel-caption" style="display:none">
         <p style="color:var(--sand);font-size:.82rem;margin-bottom:16px" data-i18n="modal.caption.intro">Generate an Instagram-ready caption for your trip &#10024;</p>
@@ -898,7 +1061,7 @@ body{font-family:'Sarabun',system-ui,sans-serif;background:#0d0805;color:var(--t
 </div>
 
 <script>
-const I18N={en:{'nav.tagline':'Explorer','nav.vibes':'Choose Vibe','nav.surprise':'Surprise Me','nav.newpick':'New Pick','landing.eyebrow':'Discover Thailand','landing.subtitle':'สำรวจไทยในแบบที่ใช่','landing.description':"Stop scrolling Pinterest at 2am. Tell us your vibe — we'll find your perfect Thai escape in seconds.",'landing.cta1':'Choose My Vibe','landing.cta2':'Surprise Me','landing.stat1':'15 destinations','landing.stat2':'6 vibes','landing.stat3':'Zero ads','landing.stat4':'100% Thailand','mood.step':'Step 1 of 2','mood.heading':"What's your vibe?",'mood.sub':'Pick the experience that excites you most','results.eyebrow':'Your picks','results.found':'Found','results.found2':'destinations matching your vibe','surprise.eyebrow':'Surprise Pick','surprise.heading':'The universe chose for you','surprise.hint':'Perfect for right now','surprise.title':'Your perfect match awaits','surprise.pool':'Selected from','surprise.pool2':'season-perfect destinations','surprise.season':'Current season','modal.tab1':'Overview','modal.tab2':'2D1N Plan','modal.tab3':'Map','modal.tab4':'Caption ✨','modal.activities':'Top 3 Must-Do Activities','modal.itin.intro':'A perfect 2 Days, 1 Night itinerary ✨','modal.day1':'Day 1','modal.day2':'Day 2','modal.besttime':'Best time','modal.rated':'✦ Highly Rated','card.explore':'Explore + Itinerary','modal.download':'Download Itinerary Card','modal.hotspots':'Activity Hotspots','modal.openmap':'Open in Google Maps','modal.caption.intro':'Generate an Instagram-ready caption ✨','modal.caption.romantic':'Sweet','modal.caption.funny':'Funny','modal.caption.info':'Informative','modal.caption.generating':'Crafting your caption...','modal.caption.regen':'Regenerate','modal.caption.copy':'Copy Caption','season.cool':'Cool Season','season.hot':'Hot Season','season.rainy':'Rainy Season','season.badge.perfect':'✦ Perfect Time','season.badge.good':'Good Time','season.badge.off':'Off-season','eco.label':'Green Choice','budget.label.1':'Budget','budget.label.2':'Mid-range','budget.label.3':'Luxury','share.title':'Your Itinerary Card','share.itin':'2 DAYS · 1 NIGHT ITINERARY','share.copytext':'Copy Text','share.print':'Print / Save PDF','footer.copy':'All destinations are 100% Thailand',
+const I18N={en:{'nav.tagline':'Explorer','nav.vibes':'Choose Vibe','nav.surprise':'Surprise Me','nav.newpick':'New Pick','landing.eyebrow':'Discover Thailand','landing.subtitle':'สำรวจไทยในแบบที่ใช่','landing.description':"Stop scrolling Pinterest at 2am. Tell us your vibe — we'll find your perfect Thai escape in seconds.",'landing.cta1':'Choose My Vibe','landing.cta2':'Surprise Me','landing.stat1':'30+ destinations','landing.stat2':'7 vibes','landing.stat3':'Zero ads','landing.stat4':'100% Thailand','mood.step':'Step 1 of 2','mood.heading':"What's your vibe?",'mood.sub':'Pick the experience that excites you most','results.eyebrow':'Your picks','results.found':'Found','results.found2':'destinations matching your vibe','surprise.eyebrow':'Surprise Pick','surprise.heading':'The universe chose for you','surprise.hint':'Perfect for right now','surprise.title':'Your perfect match awaits','surprise.pool':'Selected from','surprise.pool2':'season-perfect destinations','surprise.season':'Current season','modal.tab1':'Overview','modal.tab2':'Trip Planner','modal.tab3':'Map','modal.tab4':'Caption ✨','modal.activities':'Top 5 Must-Do Activities','modal.itin.intro':'A perfect 2 Days, 1 Night itinerary ✨','modal.day1':'Day 1','modal.day2':'Day 2','modal.besttime':'Best time','modal.rated':'✦ Highly Rated','card.explore':'Explore + Itinerary','modal.download':'Download Itinerary Card','modal.hotspots':'Activity Hotspots','modal.openmap':'Open in Google Maps','modal.caption.intro':'Generate an Instagram-ready caption ✨','modal.caption.romantic':'Sweet','modal.caption.funny':'Funny','modal.caption.info':'Informative','modal.caption.generating':'Crafting your caption...','modal.caption.regen':'Regenerate','modal.caption.copy':'Copy Caption','season.cool':'Cool Season','season.hot':'Hot Season','season.rainy':'Rainy Season','season.badge.perfect':'✦ Perfect Time','season.badge.good':'Good Time','season.badge.off':'Off-season','eco.label':'Green Choice','budget.label.1':'Budget','budget.label.2':'Mid-range','budget.label.3':'Luxury','share.title':'Your Itinerary Card','share.itin':'2 DAYS · 1 NIGHT ITINERARY','share.copytext':'Copy Text','share.print':'Print / Save PDF','footer.copy':'All destinations are 100% Thailand',
     'nav.saved':'My Trips','saved.eyebrow':'Saved Trips','saved.heading':'My Trips',
     'saved.compare':'Compare','saved.clear':'Clear All',
     'saved.compare.hint':'Select 2–3 destinations to compare side by side',
@@ -909,7 +1072,16 @@ const I18N={en:{'nav.tagline':'Explorer','nav.vibes':'Choose Vibe','nav.surprise
     'modal.weather.disclaimer':'⚡ Simulated data · Refresh for variation',
     'modal.navigate':'Navigate with Google Maps','modal.copylink':'Copy Link to Itinerary',
     'modal.green.title':'Green Rating','modal.carbon.title':'Carbon Estimate from Bangkok',
-    'modal.carbon.tip':'Tip: Take the train — save up to 60% carbon'},th:{'nav.tagline':'สำรวจไทย','nav.vibes':'เลือก Vibe','nav.surprise':'สุ่มให้เลย','nav.newpick':'เลือกใหม่','landing.eyebrow':'ค้นพบประเทศไทย','landing.subtitle':'Discover Thailand Your Way','landing.description':'หยุดเลื่อน Pinterest ตี 2 บอก vibe ของคุณมา — เราจะหาที่เที่ยวไทยในฝันให้คุณทันที','landing.cta1':'เลือก Vibe ของฉัน','landing.cta2':'สุ่มให้เลย','landing.stat1':'15 จุดหมาย','landing.stat2':'6 บรรยากาศ','landing.stat3':'ไม่มีโฆษณา','landing.stat4':'ไทย 100%','mood.step':'ขั้นตอน 1 จาก 2','mood.heading':'คุณชอบบรรยากาศแบบไหน?','mood.sub':'เลือกประสบการณ์ที่ตรงกับความรู้สึกของคุณ','results.eyebrow':'ที่เที่ยวของคุณ','results.found':'พบ','results.found2':'จุดหมายที่ตรงกับ vibe ของคุณ','surprise.eyebrow':'สุ่มให้แล้ว','surprise.heading':'จักรวาลเลือกให้คุณแล้ว','surprise.hint':'เหมาะกับฤดูกาลนี้มากที่สุด','surprise.title':'จุดหมายในฝันของคุณรออยู่','surprise.pool':'สุ่มจาก','surprise.pool2':'จุดหมายที่เหมาะกับฤดูนี้','surprise.season':'ฤดูปัจจุบัน','modal.tab1':'ภาพรวม','modal.tab2':'แผน 2 วัน 1 คืน','modal.tab3':'แผนที่','modal.tab4':'Caption ✨','modal.activities':'3 กิจกรรมห้ามพลาด','modal.itin.intro':'แผนการเที่ยว 2 วัน 1 คืนที่สมบูรณ์แบบ ✨','modal.day1':'วันที่ 1','modal.day2':'วันที่ 2','modal.besttime':'ช่วงเวลาที่ดีที่สุด','modal.rated':'✦ แนะนำสูง','card.explore':'สำรวจ + แผนการเที่ยว','modal.download':'ดาวน์โหลดการ์ดการเที่ยว','modal.hotspots':'จุดท่องเที่ยวหลัก','modal.openmap':'เปิดใน Google Maps','modal.caption.intro':'สร้างแคปชั่น Instagram สำหรับทริปของคุณ ✨','modal.caption.romantic':'โรแมนติก','modal.caption.funny':'ตลก','modal.caption.info':'ให้ข้อมูล','modal.caption.generating':'กำลังสร้างแคปชั่น...','modal.caption.regen':'สร้างใหม่','modal.caption.copy':'คัดลอก','season.cool':'ฤดูหนาว','season.hot':'ฤดูร้อน','season.rainy':'ฤดูฝน','season.badge.perfect':'✦ ช่วงเวลาที่ดีที่สุด','season.badge.good':'ช่วงเวลาดี','season.badge.off':'นอกฤดูกาล','eco.label':'กรีนช้อยส์','budget.label.1':'ราคาประหยัด','budget.label.2':'ระดับกลาง','budget.label.3':'ลักชัวรี','share.title':'การ์ดการเที่ยวของคุณ','share.itin':'แผน 2 วัน 1 คืน','share.copytext':'คัดลอกข้อความ','share.print':'พิมพ์ / บันทึก PDF','footer.copy':'ทุกจุดหมายคือประเทศไทยแท้ 100%',
+    'modal.carbon.tip':'Tip: Take the train — save up to 60% carbon',
+    'plan.daytrip':'Day Trip','plan.2d1n':'2 Days 1 Night','plan.3d2n':'3 Days 2 Nights','plan.4d3n':'4 Days 3 Nights',
+    'plan.night.0':'(no overnight)','plan.night.1':'(1 night)','plan.night.2':'(2 nights)','plan.night.3':'(3 nights)',
+    'plan.route.title':'Route Plan','plan.open.maps':'Full Route in Maps',
+    'plan.tip.label':'Local Tip','plan.download':'Download Plan','plan.copy.route':'Copy Route',
+    'filter.region':'Region','filter.budget':'Budget','filter.season':'Season',
+    'filter.eco':'Green','filter.reset':'Clear filters',
+    'filter.no.results':'No destinations match these filters',
+    'filter.no.results.sub':'Try removing a filter or two.',
+    'filter.showing':'Showing','filter.of':'of','filter.results':'results'},th:{'nav.tagline':'สำรวจไทย','nav.vibes':'เลือก Vibe','nav.surprise':'สุ่มให้เลย','nav.newpick':'เลือกใหม่','landing.eyebrow':'ค้นพบประเทศไทย','landing.subtitle':'Discover Thailand Your Way','landing.description':'หยุดเลื่อน Pinterest ตี 2 บอก vibe ของคุณมา — เราจะหาที่เที่ยวไทยในฝันให้คุณทันที','landing.cta1':'เลือก Vibe ของฉัน','landing.cta2':'สุ่มให้เลย','landing.stat1':'30+ จุดหมาย','landing.stat2':'7 บรรยากาศ','landing.stat3':'ไม่มีโฆษณา','landing.stat4':'ไทย 100%','mood.step':'ขั้นตอน 1 จาก 2','mood.heading':'คุณชอบบรรยากาศแบบไหน?','mood.sub':'เลือกประสบการณ์ที่ตรงกับความรู้สึกของคุณ','results.eyebrow':'ที่เที่ยวของคุณ','results.found':'พบ','results.found2':'จุดหมายที่ตรงกับ vibe ของคุณ','surprise.eyebrow':'สุ่มให้แล้ว','surprise.heading':'จักรวาลเลือกให้คุณแล้ว','surprise.hint':'เหมาะกับฤดูกาลนี้มากที่สุด','surprise.title':'จุดหมายในฝันของคุณรออยู่','surprise.pool':'สุ่มจาก','surprise.pool2':'จุดหมายที่เหมาะกับฤดูนี้','surprise.season':'ฤดูปัจจุบัน','modal.tab1':'ภาพรวม','modal.tab2':'ออกแบบทริป','modal.tab3':'แผนที่','modal.tab4':'Caption ✨','modal.activities':'5 กิจกรรมห้ามพลาด','modal.itin.intro':'แผนการเที่ยว 2 วัน 1 คืนที่สมบูรณ์แบบ ✨','modal.day1':'วันที่ 1','modal.day2':'วันที่ 2','modal.besttime':'ช่วงเวลาที่ดีที่สุด','modal.rated':'✦ แนะนำสูง','card.explore':'สำรวจ + แผนการเที่ยว','modal.download':'ดาวน์โหลดการ์ดการเที่ยว','modal.hotspots':'จุดท่องเที่ยวหลัก','modal.openmap':'เปิดใน Google Maps','modal.caption.intro':'สร้างแคปชั่น Instagram สำหรับทริปของคุณ ✨','modal.caption.romantic':'โรแมนติก','modal.caption.funny':'ตลก','modal.caption.info':'ให้ข้อมูล','modal.caption.generating':'กำลังสร้างแคปชั่น...','modal.caption.regen':'สร้างใหม่','modal.caption.copy':'คัดลอก','season.cool':'ฤดูหนาว','season.hot':'ฤดูร้อน','season.rainy':'ฤดูฝน','season.badge.perfect':'✦ ช่วงเวลาที่ดีที่สุด','season.badge.good':'ช่วงเวลาดี','season.badge.off':'นอกฤดูกาล','eco.label':'กรีนช้อยส์','budget.label.1':'ราคาประหยัด','budget.label.2':'ระดับกลาง','budget.label.3':'ลักชัวรี','share.title':'การ์ดการเที่ยวของคุณ','share.itin':'แผน 2 วัน 1 คืน','share.copytext':'คัดลอกข้อความ','share.print':'พิมพ์ / บันทึก PDF','footer.copy':'ทุกจุดหมายคือประเทศไทยแท้ 100%',
     'nav.saved':'ทริปของฉัน','saved.eyebrow':'ทริปที่บันทึก','saved.heading':'ทริปของฉัน',
     'saved.compare':'เปรียบเทียบ','saved.clear':'ลบทั้งหมด',
     'saved.compare.hint':'เลือก 2–3 จุดหมายเพื่อเปรียบเทียบแบบคู่กัน',
@@ -920,7 +1092,16 @@ const I18N={en:{'nav.tagline':'Explorer','nav.vibes':'Choose Vibe','nav.surprise
     'modal.weather.disclaimer':'⚡ ข้อมูลจำลอง · รีเฟรชเพื่อดูการเปลี่ยนแปลง',
     'modal.navigate':'นำทางด้วย Google Maps','modal.copylink':'คัดลอกลิงก์แผนเที่ยว',
     'modal.green.title':'คะแนนสีเขียว','modal.carbon.title':'คาร์บอนโดยประมาณ (จากกรุงเทพ)',
-    'modal.carbon.tip':'เคล็ดลับ: นั่งรถไฟเพื่อลดคาร์บอนได้ถึง 60%'}};
+    'modal.carbon.tip':'เคล็ดลับ: นั่งรถไฟเพื่อลดคาร์บอนได้ถึง 60%',
+    'plan.daytrip':'Day Trip','plan.2d1n':'2 วัน 1 คืน','plan.3d2n':'3 วัน 2 คืน','plan.4d3n':'4 วัน 3 คืน',
+    'plan.night.0':'(ไม่ค้างคืน)','plan.night.1':'(1 คืน)','plan.night.2':'(2 คืน)','plan.night.3':'(3 คืน)',
+    'plan.route.title':'แผนเส้นทาง','plan.open.maps':'เปิดเส้นทางใน Maps',
+    'plan.tip.label':'เคล็ดลับท้องถิ่น','plan.download':'ดาวน์โหลดแผน','plan.copy.route':'คัดลอกเส้นทาง',
+    'filter.region':'ภูมิภาค','filter.budget':'ราคา','filter.season':'ฤดูกาล',
+    'filter.eco':'สีเขียว','filter.reset':'ล้างตัวกรอง',
+    'filter.no.results':'ไม่มีจุดหมายที่ตรงกับตัวกรองนี้',
+    'filter.no.results.sub':'ลองลบตัวกรองบางตัวออก',
+    'filter.showing':'แสดง','filter.of':'จาก','filter.results':'รายการ'}};
 
 const DESTINATIONS=[
 {id:1,name:"Chiang Mai",nameTh:"เชียงใหม่",tagline:"Where mountains meet ancient temples",taglineTh:"ที่ที่ขุนเขาพบวัดวาโบราณ",province:"Chiang Mai",region:"North",moods:["culture","slowlife","adventure","hidden"],season:["cool","hot"],eco_friendly:true,budget_level:2,best_months:[11,12,1,2,3],image:"https://images.unsplash.com/photo-1528181304800-259b08848526?w=900&q=82",credit:"Doi Suthep Temple, Chiang Mai",bestTime:"Nov – Feb",mapSearch:"Chiang Mai Thailand temples",hotspots:[{name:"Doi Suthep Temple",dist:"16 km from centre",emoji:"🛕"},{name:"Elephant Nature Park",dist:"60 km northeast",emoji:"🐘"},{name:"Sunday Walking Street",dist:"Old City centre",emoji:"🥭"}],description:"Misty mountains, saffron-robed monks, and night markets that smell of lemongrass — Chiang Mai is Thailand's soul poured into a city.",descTh:"ภูเขาหมอก พระในจีวรสีส้ม และตลาดกลางคืนที่หอมกลิ่นตะไคร้ — เชียงใหม่คือจิตวิญญาณของไทยที่ถูกกลั่นมาอยู่ในเมืองเดียว",activities:["Doi Inthanon sunrise hike","Elephant sanctuary visit","Sunday Walking Street feast"],activitiesTh:["ขึ้นดอยอินทนนท์ชมพระอาทิตย์ขึ้น","เยือนศูนย์อนุรักษ์ช้าง","เดินถนนคนเดินวันอาทิตย์"],captions:{romantic:["Lost in lantern light and temple gold in Chiang Mai 🏮 Some places don't just take your breath away — they give it back to you, slower and softer. #ChiangMai #ThailandLove","Found you in the morning mist of Doi Suthep ☁️ 500 steps to the top, and somehow I fell further. #LoveInThailand"],funny:["Came to Chiang Mai for culture. Left with three bags of mango sticky rice and a serious elephant selfie problem 🐘 No regrets. #StickyRiceLife","My elephant sanctuary volunteer application said 'any experience with large animals?' I said 'I once carried a 10kg suitcase upstairs.' I got in. #ElephantSanctuary"],informative:["Chiang Mai sits 300m above sea level and is home to 300+ temples 🏔️ The nearby Elephant Nature Park is an ethical rescue sanctuary founded in 1996 — no riding, no chains. Best visited Nov–Feb. #ChiangMaiThailand","Doi Inthanon at 2,565m is Thailand's highest peak, just 80km from Chiang Mai 🌿 The mountain hosts rare orchids and migratory birds only visible in cool season. #DoiInthanon"]},itinerary:{day1:["Morning: Doi Suthep temple at golden hour","Afternoon: Elephant Nature Park","Evening: Nimman Road café-hopping"],day2:["Morning: Old City moat walk & temples","Afternoon: Thai cooking class","Evening: Night Bazaar & mango sticky rice"]},itineraryTh:{day1:["เช้า: วัดดอยสุเทพแสงทอง","บ่าย: เอเลแฟนต์เนเจอร์พาร์ค","เย็น: เดินคาเฟ่ถนนนิมมาน"],day2:["เช้า: เดินรอบคูเมืองและวัด","บ่าย: เรียนทำอาหารไทย","เย็น: ไนท์บาซาร์และมะม่วงข้าวเหนียว"]},lat:18.7883,lng:98.9853,eco_score:82,carbon_km:688,activity_types:['Nature', 'Culture', 'Cafe', 'Food'],eco_criteria:['Ethical elephants', 'Low-waste markets', 'Eco guesthouses']},
@@ -937,7 +1118,22 @@ const DESTINATIONS=[
 {id:12,name:"Nan",nameTh:"น่าน",tagline:"Thailand's best-kept secret valley",taglineTh:"หุบเขาความลับที่ดีที่สุดของไทย",province:"Nan",region:"North",moods:["hidden","culture","slowlife"],season:["cool"],eco_friendly:true,budget_level:1,best_months:[10,11,12,1,2],image:"https://images.unsplash.com/photo-1573843981267-be1999ff37cd?w=900&q=82",credit:"Nan Valley & Nan River, Northern Thailand",bestTime:"Oct – Feb",mapSearch:"Nan Thailand secret valley temples murals",hotspots:[{name:"Wat Phumin",dist:"Town centre",emoji:"🎨"},{name:"Bo Kluea Salt Wells",dist:"90 km northeast",emoji:"🧂"},{name:"Doi Phu Kha Park",dist:"75 km north",emoji:"🌿"}],description:"Nan is what Chiang Mai was 30 years ago. Antique temples with rare murals, river valleys flooded with wildflowers, and zero tourists fighting for the same photo spot.",descTh:"น่านคือสิ่งที่เชียงใหม่เคยเป็นเมื่อ 30 ปีก่อน วัดโบราณมีภาพจิตรกรรมหายาก ไม่มีนักท่องเที่ยวแย่งถ่ายรูป",activities:["Wat Phumin mural exploration","Nan River kayak","Bo Kluea salt village"],activitiesTh:["ชมจิตรกรรมวัดภูมินทร์","พายเรือคายักแม่น้ำน่าน","หมู่บ้านเกลือบ่อเกลือ"],captions:{romantic:["Found the quietest corner of Thailand in Nan — where the murals have been telling the same love story for 500 years 🎨 #NanThailand","Nan River at dusk, kayak, silence, mountain silhouettes — this is Thailand breathing without performing 🛶 #HiddenThailand"],funny:["Nan Thailand: ✅ No crowds ✅ Cheapest prices ✅ Murals that make the Sistine Chapel nervous ✅ Nobody believes me when I describe it. #NanThailand","Bo Kluea has harvested salt from underground brine since the 13th century. They also sell the best salt caramel I've ever tasted. History is delicious. 🧂"],informative:["Wat Phumin's 19th-century murals are among Thailand's most celebrated 🎨 The famous 'whispering lovers' image has become an iconic symbol of northern Thai art. Built 1596 in an unusual cruciform shape. #WatPhumin","Bo Kluea ('Salt Well') has been producing salt for 800+ years from ancient underground brine 🧂 One of only a few inland salt sources in all of mainland Southeast Asia. #BoKluea"]},itinerary:{day1:["Morning: Wat Phumin — Thai murals Mona Lisa","Afternoon: Nan National Museum old city walk","Evening: Riverside restaurant live folk music"],day2:["Morning: Bo Kluea salt wells day trip","Afternoon: Doi Phu Kha national park walk","Evening: Homestay dinner local family"]},itineraryTh:{day1:["เช้า: วัดภูมินทร์ — โมนาลิซาไทย","บ่าย: พิพิธภัณฑสถานแห่งชาติน่าน","เย็น: ดินเนอร์ริมน้ำดนตรีสด"],day2:["เช้า: บ่อเกลือ","บ่าย: เดินป่าดอยภูคา","เย็น: ดินเนอร์โฮมสเตย์"]},lat:18.7756,lng:100.7793,eco_score:88,carbon_km:817,activity_types:['Culture', 'Nature', 'Hidden Gem'],eco_criteria:['No-crowds', 'Rare murals', 'Sustainable salt']},
 {id:13,name:"Amphawa",nameTh:"อัมพวา",tagline:"Fireflies and floating markets at midnight",taglineTh:"หิ่งห้อยและตลาดน้ำเที่ยงคืน",province:"Samut Songkhram",region:"Central",moods:["foodie","slowlife","hidden"],season:["cool","rainy"],eco_friendly:true,budget_level:1,best_months:[5,6,7,8,9,10],image:"https://images.unsplash.com/photo-1470770903676-69b98201ea1c?w=900&q=82",credit:"Amphawa Floating Market, Samut Songkhram",bestTime:"May – Oct",mapSearch:"Amphawa floating market fireflies Thailand canal",hotspots:[{name:"Amphawa Floating Market",dist:"Canal front",emoji:"🛶"},{name:"Firefly Mangrove Tour",dist:"15 min by boat",emoji:"✨"},{name:"Maeklong Railway Market",dist:"12 km east",emoji:"🚂"}],description:"A canal town straight out of a watercolor painting. Wooden shophouses lean over the water, vendors sell grilled river prawns from boats, and at dusk — fireflies ignite the mangroves.",descTh:"เมืองคลองที่ดูราวภาพสีน้ำ ห้องแถวไม้ก้มเอียงเหนือน้ำ กุ้งย่างจากเรือ และหิ่งห้อยสว่างไสวในป่าโกงกาง",activities:["Firefly boat tour at dusk","Floating market breakfast","Coconut sugar farm tour"],activitiesTh:["ล่องเรือชมหิ่งห้อยยามเย็น","อาหารเช้าตลาดน้ำ","ทัวร์ฟาร์มน้ำตาลมะพร้าว"],captions:{romantic:["Fireflies over the canal at midnight in Amphawa 🌟 Some places are magic. This is one of them. #AmphawaNight","Floating market breakfast: pad kra pao from a boat, canal breeze, wooden shophouse reflections in the water 🎨 #AmphawaThai"],funny:["Amphawa: arrived for food, stayed for fireflies, left with 4kg of coconut sugar and a live herb seedling. No idea how I flew home. 🛶 #AmphawaShopping","The Maeklong Railway Market: vendors pull back their awnings and let the train pass, then immediately put everything back. Most nonchalant relationship with a train I've witnessed. 🚂"],informative:["Amphawa is a preserved canal community in Samut Songkhram Province, 80km from Bangkok 🏚️ Its firefly population (peak May–October) is one of the largest in the region — a rare natural bioluminescent display. #AmphawFireflies","The Maeklong Railway Market (Talat Rom Hup) has operated alongside active tracks since the early 20th century 🚂 Vendors fold their umbrellas 8 times daily to let trains pass — a quirky survival strategy. #MaeklongMarket"]},itinerary:{day1:["Morning: Floating market longtail breakfast","Afternoon: Coconut sugar farm salt flat tour","Evening: Firefly canal cruise sunset"],day2:["Morning: Maeklong Railway umbrella market","Afternoon: Cycle canal villages orchard trails","Evening: Grilled river prawn wooden deck dinner"]},itineraryTh:{day1:["เช้า: อาหารเช้าตลาดน้ำเรือหางยาว","บ่าย: ฟาร์มน้ำตาลมะพร้าวนาเกลือ","เย็น: ล่องเรือชมหิ่งห้อย"],day2:["เช้า: ตลาดแม่กลองร่มหุบ","บ่าย: ปั่นจักรยานหมู่บ้านคลอง","เย็น: กุ้งแม่น้ำย่างบนระเบียงไม้"]},lat:13.4166,lng:100.0014,eco_score:72,carbon_km:105,activity_types:['Food', 'Nature', 'Slow Life'],eco_criteria:['Firefly habitat', 'Organic coconut', 'Canal culture']},
 {id:14,name:"Khao Yai",nameTh:"เขาใหญ่",tagline:"Elephants, wine & jungle waterfalls",taglineTh:"ช้าง ไวน์ และน้ำตกในป่า",province:"Nakhon Ratchasima",region:"Northeast",moods:["adventure","hidden","slowlife"],season:["cool","rainy"],eco_friendly:true,budget_level:2,best_months:[10,11,12,1,2,3],image:"https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=900&q=82",credit:"Haew Narok Waterfall, Khao Yai National Park",bestTime:"Oct – Mar",mapSearch:"Khao Yai National Park Thailand jungle waterfall elephants",hotspots:[{name:"Haew Narok Waterfall",dist:"20 km from entrance",emoji:"💧"},{name:"PB Valley Winery",dist:"15 km from park",emoji:"🍷"},{name:"Night Safari Zone",dist:"Park interior",emoji:"🐘"}],description:"A UNESCO jungle 2 hours from Bangkok where wild elephants cross the road, hornbills call at dawn, and Italian wineries somehow produce extraordinary Shiraz.",descTh:"ป่ามรดกโลก UNESCO ห่างกรุงเทพ 2 ชั่วโมง ช้างป่าข้ามถนน นกกก้องยามรุ่งสาง ไวน์อิตาเลียน Shiraz ชั้นเยี่ยม",activities:["Wildlife night safari","Haew Narok waterfall trek","PB Valley Khao Yai Winery"],activitiesTh:["ซาฟารีกลางคืนชมสัตว์ป่า","เดินป่าน้ำตกเหวนรก","ไวน์เนอรี่ PB Valley เขาใหญ่"],captions:{romantic:["A wild elephant crossed the road 10 metres ahead of us at sunset. We both went silent. Then we looked at each other and didn't need to say anything at all 🐘 #KhaoYai","Jungle mornings at Khao Yai: hornbills calling, gibbons answering, two cups of coffee and nowhere to be 🦜 #KhaoYaiMorning"],funny:["Khao Yai has wild elephants AND Italian wine vineyards within 30 minutes of each other. The most chaotic and wonderful itinerary I've ever accidentally assembled. 🐘🍷 #KhaoYaiCombo","Night safari update: saw elephants, deer, owls, and one incredibly unbothered porcupine. The porcupine was not whispering. 🦔 #KhaoYaiSafari"],informative:["Khao Yai is part of the Dong Phayayen-Khao Yai Forest Complex, a UNESCO World Heritage Site covering 6,155 sq km 🌿 It's home to 200+ wild elephants and 300+ bird species. #KhaoYaiUNESCO","PB Valley was Thailand's first commercial winery (est. 1989), pioneering 'new latitude wine' in a tropical climate 🍷 Thailand now has 20+ wineries in the Khao Yai region. #ThailandWine"]},itinerary:{day1:["Morning: Guided jungle trek wildlife spotting","Afternoon: Haew Narok Waterfall swim","Evening: Night safari sambar deer & elephants"],day2:["Morning: Birdwatching at dawn hornbills","Afternoon: PB Valley Winery tour tasting","Evening: Farm-to-table vineyard terrace dinner"]},itineraryTh:{day1:["เช้า: ทัวร์เดินป่าชมสัตว์","บ่าย: ว่ายน้ำน้ำตกเหวนรก","เย็น: ซาฟารีกลางคืนชมช้าง"],day2:["เช้า: ดูนกยามรุ่งสาง","บ่าย: ชิมไวน์ PB Valley","เย็น: ดินเนอร์บนสวนองุ่น"]},lat:14.429,lng:101.3725,eco_score:83,carbon_km:203,activity_types:['Nature', 'Wildlife', 'Food'],eco_criteria:['UNESCO jungle', 'Wildlife protection', 'Eco winery']},
-{id:15,name:"Koh Phangan",nameTh:"เกาะพะงัน",tagline:"Full Moon magic & jungle waterfalls",taglineTh:"มนตร์เพ็ญเดือนเต็มและน้ำตกในป่า",province:"Surat Thani",region:"South",moods:["beach","adventure","slowlife"],season:["cool","hot"],eco_friendly:false,budget_level:2,best_months:[12,1,2,3,4,5,6,7,8,9],image:"https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?w=900&q=82",credit:"Haad Rin Beach, Koh Phangan, Surat Thani",bestTime:"Dec – Sep",mapSearch:"Koh Phangan Full Moon Party beach Thailand Gulf",hotspots:[{name:"Haad Rin (Full Moon Beach)",dist:"Southeast tip",emoji:"🌕"},{name:"Bottle Beach",dist:"North coast, 20 min by boat",emoji:"🏝️"},{name:"Phaeng Waterfall",dist:"Centre of island",emoji:"🌊"}],description:"Far beyond the Full Moon Party lies a quieter, wilder island. Secret jungle waterfalls, wellness retreats in the hills, and north-shore beaches so peaceful they feel like a different country.",descTh:"ไกลออกไปจาก Full Moon Party คือเกาะที่สงบและดิบกว่า น้ำตกลับในป่า รีทรีตบนเนินเขา",activities:["Full Moon Party at Haad Rin","Phaeng Waterfall jungle hike","Sunrise yoga at Anantara resort"],activitiesTh:["ปาร์ตี้วันเพ็ญที่หาดริ้น","เดินป่าน้ำตกแพง","โยคะชมพระอาทิตย์ขึ้นที่อนันตรา"],captions:{romantic:["Koh Phangan has a Full Moon Party AND a sunrise yoga hilltop. We chose the hilltop. We found ourselves 🌅 #KohPhangan #ThailandWellness","Bottle Beach: accessible only by boat, no roads, no menu — just two people and a sunset that felt custom-made 🏖️ #BottleBeach"],funny:["Koh Phangan tip: Full Moon Party AND Michelin-starred wellness retreats within 10km. Pick your fighter. I picked both. I regret nothing. 🌕🧘 #KohPhanganLife","Took a longtail to Bottle Beach. No signal, no menu, no plan. Best day of the trip. Sometimes the algorithm doesn't know best. 🚤"],informative:["Koh Phangan's Full Moon Party began in 1988 with a small group of backpackers 🌕 Now draws 30,000+ monthly. But beyond Haad Rin lies pristine national park, the 627m Khao Ra summit, and uncrowded Gulf beaches. #KohPhanganFullMoon","Phaeng Waterfall sits inside Koh Phangan's national park 🌿 The upper pool allows swimming and offers a freshwater alternative to the sea — peaceful contrast to party beaches 20km away. #PhaengWaterfall"]},itinerary:{day1:["Morning: Sunrise yoga overlooking the Gulf","Afternoon: Motorbike to Bottle Beach","Evening: Organic dinner wellness retreat"],day2:["Morning: Jungle hike Phaeng Waterfall natural pools","Afternoon: Snorkel Koh Ma sandbar low tide","Evening: Fire dancer show Sunrise Beach"]},itineraryTh:{day1:["เช้า: โยคะชมอ่าวไทยยามพระอาทิตย์ขึ้น","บ่าย: มอเตอร์ไซค์สู่บ็อตเทิลบีช","เย็น: ดินเนอร์ออร์แกนิก"],day2:["เช้า: เดินป่าน้ำตกแพง","บ่าย: ดำน้ำตื้นสันทรายเกาะมา","เย็น: โชว์เต้นไฟหาดพระอาทิตย์ขึ้น"]},lat:9.7382,lng:100.0136,eco_score:48,carbon_km:830,activity_types:['Beach', 'Adventure', 'Wellness'],eco_criteria:[]}
+{id:15,name:"Koh Phangan",nameTh:"เกาะพะงัน",tagline:"Full Moon magic & jungle waterfalls",taglineTh:"มนตร์เพ็ญเดือนเต็มและน้ำตกในป่า",province:"Surat Thani",region:"South",moods:["beach","adventure","slowlife"],season:["cool","hot"],eco_friendly:false,budget_level:2,best_months:[12,1,2,3,4,5,6,7,8,9],image:"https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?w=900&q=82",credit:"Haad Rin Beach, Koh Phangan, Surat Thani",bestTime:"Dec – Sep",mapSearch:"Koh Phangan Full Moon Party beach Thailand Gulf",hotspots:[{name:"Haad Rin (Full Moon Beach)",dist:"Southeast tip",emoji:"🌕"},{name:"Bottle Beach",dist:"North coast, 20 min by boat",emoji:"🏝️"},{name:"Phaeng Waterfall",dist:"Centre of island",emoji:"🌊"}],description:"Far beyond the Full Moon Party lies a quieter, wilder island. Secret jungle waterfalls, wellness retreats in the hills, and north-shore beaches so peaceful they feel like a different country.",descTh:"ไกลออกไปจาก Full Moon Party คือเกาะที่สงบและดิบกว่า น้ำตกลับในป่า รีทรีตบนเนินเขา",activities:["Full Moon Party at Haad Rin","Phaeng Waterfall jungle hike","Sunrise yoga at Anantara resort"],activitiesTh:["ปาร์ตี้วันเพ็ญที่หาดริ้น","เดินป่าน้ำตกแพง","โยคะชมพระอาทิตย์ขึ้นที่อนันตรา"],captions:{romantic:["Koh Phangan has a Full Moon Party AND a sunrise yoga hilltop. We chose the hilltop. We found ourselves 🌅 #KohPhangan #ThailandWellness","Bottle Beach: accessible only by boat, no roads, no menu — just two people and a sunset that felt custom-made 🏖️ #BottleBeach"],funny:["Koh Phangan tip: Full Moon Party AND Michelin-starred wellness retreats within 10km. Pick your fighter. I picked both. I regret nothing. 🌕🧘 #KohPhanganLife","Took a longtail to Bottle Beach. No signal, no menu, no plan. Best day of the trip. Sometimes the algorithm doesn't know best. 🚤"],informative:["Koh Phangan's Full Moon Party began in 1988 with a small group of backpackers 🌕 Now draws 30,000+ monthly. But beyond Haad Rin lies pristine national park, the 627m Khao Ra summit, and uncrowded Gulf beaches. #KohPhanganFullMoon","Phaeng Waterfall sits inside Koh Phangan's national park 🌿 The upper pool allows swimming and offers a freshwater alternative to the sea — peaceful contrast to party beaches 20km away. #PhaengWaterfall"]},itinerary:{day1:["Morning: Sunrise yoga overlooking the Gulf","Afternoon: Motorbike to Bottle Beach","Evening: Organic dinner wellness retreat"],day2:["Morning: Jungle hike Phaeng Waterfall natural pools","Afternoon: Snorkel Koh Ma sandbar low tide","Evening: Fire dancer show Sunrise Beach"]},itineraryTh:{day1:["เช้า: โยคะชมอ่าวไทยยามพระอาทิตย์ขึ้น","บ่าย: มอเตอร์ไซค์สู่บ็อตเทิลบีช","เย็น: ดินเนอร์ออร์แกนิก"],day2:["เช้า: เดินป่าน้ำตกแพง","บ่าย: ดำน้ำตื้นสันทรายเกาะมา","เย็น: โชว์เต้นไฟหาดพระอาทิตย์ขึ้น"]},lat:9.7382,lng:100.0136,eco_score:48,carbon_km:830,activity_types:['Beach', 'Adventure', 'Wellness'],eco_criteria:[]},
+{id:16,name:"Samet Nangshe Viewpoint",nameTh:"เสม็ดนางชี",tagline:"The sunrise that breaks the internet every winter",taglineTh:"พระอาทิตย์ขึ้นเหนืออ่าวพังงาที่โด่งดังที่สุดในไทย",province:"Phang Nga",region:"South",moods:["hidden","slowlife","cafe"],season:["cool"],eco_friendly:true,budget_level:1,best_months:[11,12,1,2],image:"https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=900&q=82",credit:"Samet Nangshe dawn view, Phang Nga Bay",bestTime:"Nov – Feb",mapSearch:"Samet Nangshe viewpoint Phang Nga Thailand sunrise",hotspots:[{name:"Samet Nangshe Peak",dist:"2 km trail from resort",emoji:"🌅"},{name:"Phang Nga Bay Kayak",dist:"20 min drive south",emoji:"🛶"},{name:"Baan Samet Nangshe Cafe",dist:"At viewpoint summit",emoji:"☕"}],description:"A 2am wake-up call that pays off completely. Watch limestone towers emerge from pink mist over Phang Nga Bay while sipping coffee at the hilltop cafe — the most-shared sunrise photo in southern Thailand.",descTh:"ตื่น 2 โมงเช้าและมันคุ้มมากๆ เสม็ดนางชีคือจุดชมพระอาทิตย์ขึ้นที่ถูกแชร์มากที่สุดในภาคใต้",activities:["Pre-dawn hike to the summit","Hilltop coffee while watching mist clear","Kayak Phang Nga Bay same afternoon"],activitiesTh:["เดินขึ้นสู่จุดชมวิวก่อนฟ้าสาง","ดื่มกาแฟบนยอดเขาชมหมอก","พายเรือคายักอ่าวพังงา"],captions:{romantic:["Set an alarm for 2am, hiked in the dark, and watched the world turn pink over Phang Nga Bay ☀️ Some sunrises you earn. #SametNangshe","The mist cleared slowly over the limestone towers and neither of us said a word for 20 minutes. That kind of morning. 🌅 #PhangNgaBay"],funny:["Woke up at 2am for a sunrise. My body protested. My phone camera immediately forgave everything. 📸 #SametNangshe #WorthIt","There is a cafe at the top of a mountain in Phang Nga that has better cold brew than my entire neighbourhood. Nature is thriving. ☕"],informative:["Samet Nangshe sits at 150m elevation with unobstructed views over Phang Nga Bay and its 40+ limestone karst islands 🏔️ The viewpoint is accessible only by resort shuttle or hiking trail. Peak season Nov–Feb for clearest mist. #SametNangsheViewpoint","Phang Nga Bay was formed over 135 million years by limestone dissolution — the same geological process behind Railay and Krabi cliffs 🌊 The bay appeared in James Bond The Man with the Golden Gun (1974). #PhangNgaBayGeology"]},itinerary:{day1:["2am: Wake call & resort shuttle to trailhead","4am: Summit arrival, set up for sunrise","6am: Hilltop cafe breakfast watching mist clear"],day2:["Morning: Kayak through Phang Nga Bay caves","Afternoon: Koh Panyee floating village lunch","Evening: Drive to Khao Lak beach for sunset"]},itineraryTh:{day1:["ตี 2: นัดรถรีสอร์ทขึ้นเขา","ตี 4: ถึงจุดชมวิว เตรียมตัวรอพระอาทิตย์ขึ้น","6 โมง: กาแฟหน้าจุดชมวิวพร้อมหมอก"],day2:["เช้า: พายเรือคายักถ้ำอ่าวพังงา","เที่ยง: มื้อกลางวันเกาะปันหยีลอยน้ำ","เย็น: ขับรถต่อไปเขาหลักชมพระอาทิตย์ตก"]},lat:8.823,lng:98.498,eco_score:80,carbon_km:728,activity_types:["Nature","Cafe","Hidden Gem"],eco_criteria:["Low development","Eco resort","Marine park"]},
+{id:17,name:"Phu Chi Fa",nameTh:"ภูชี้ฟ้า",tagline:"A sea of clouds at the edge of Thailand",taglineTh:"ทะเลหมอกที่ขอบประเทศไทย",province:"Chiang Rai",region:"North",moods:["hidden","adventure","slowlife"],season:["cool"],eco_friendly:true,budget_level:1,best_months:[11,12,1,2],image:"https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&q=82",credit:"Phu Chi Fa cliff edge sea of clouds, Chiang Rai",bestTime:"Nov – Feb",mapSearch:"Phu Chi Fa Chiang Rai Thailand sea of clouds mountain",hotspots:[{name:"Phu Chi Fa Summit (1,628m)",dist:"1 km trail from carpark",emoji:"⛰️"},{name:"Sunrise Cliff Edge",dist:"At summit",emoji:"🌅"},{name:"Hmong Village Market",dist:"2 km below summit",emoji:"🏮"}],description:"Thailand's easternmost mountain — a sheer 1,628m cliff that drops straight into Laos. In cool season, you wade through a sea of clouds to reach the edge and watch the sun rise over three countries at once.",descTh:"ภูเขาทางตะวันออกสุดของไทย หน้าผาสูง 1,628 เมตรที่ตกลงสู่ลาว ในฤดูหนาวคุณจะลุยทะเลหมอกไปยังขอบผา",activities:["Midnight drive to reach before dawn","Summit sunrise over three countries","Hmong hill tribe village breakfast"],activitiesTh:["ขับรถช่วงเที่ยงคืนเพื่อขึ้นให้ทัน","ชมพระอาทิตย์ขึ้นเหนือสามประเทศ","อาหารเช้าหมู่บ้านชาวเขาม้ง"],captions:{romantic:["Drove through the dark to reach a cloud at 1,628 metres. Then the sun came up and the cloud turned gold. Worth every km. ☁️ #PhuChiFa","Standing at the edge of Thailand, watching three countries wake up at once — the world is bigger and more beautiful than I remember. 🌅"],funny:["Phu Chi Fa briefing: it is very cold, bring a jacket. Me in my finest Bangkok cotton shirt: how cold? Them: zero degrees. 🥶 #Underprepared","The queue for the cliff edge at dawn is very orderly. Everyone is too cold to cause trouble. #PhuChiFa"],informative:["Phu Chi Fa (literally mountain pointing at the sky) sits at 1,628m on the Thai-Lao border in Chiang Rai province 🏔️ The cliff face drops 700m vertically into the Mekong plain — on clear days you can see Laos, Myanmar, and China. #PhuChiFaThailand","The sea of clouds at Phu Chi Fa forms when warm air from the Mekong valley meets cold highland air, creating temperature inversions of up to 20°C ☁️ Peak fog season: December–January. #ThailandNature"]},itinerary:{day1:["11pm: Depart Chiang Rai for overnight drive","3am: Arrive base camp, warm up at vendor stalls","6am: Summit hike, sunrise over Laos & clouds"],day2:["Morning: Hmong village market & local breakfast","Afternoon: Wawee Coffee tea plantation tour","Evening: Back to Chiang Rai White Temple sunset"]},itineraryTh:{day1:["23.00: ออกจากเชียงรายขับรถข้ามคืน","ตี 3: ถึงจุดรวมพล อุ่นร่างที่แผงขาย","6 โมง: เดินขึ้นสู่จุดสูงสุด ชมพระอาทิตย์ขึ้น"],day2:["เช้า: ตลาดหมู่บ้านม้ง อาหารเช้าท้องถิ่น","บ่าย: ทัวร์ไร่ชา Wawee Coffee","เย็น: กลับเชียงรายชมวัดร่องขุ่นยามเย็น"]},lat:20.271,lng:100.521,eco_score:86,carbon_km:887,activity_types:["Nature","Adventure","Hidden Gem"],eco_criteria:["Border forest reserve","Low visitor infrastructure","Hmong cultural preservation"]},
+{id:18,name:"Koh Kood",nameTh:"เกาะกูด",tagline:"Thailand's last undeveloped paradise island",taglineTh:"เกาะสวรรค์แห่งสุดท้ายที่ยังไม่ถูกพัฒนา",province:"Trat",region:"East",moods:["beach","slowlife","hidden"],season:["cool","hot"],eco_friendly:true,budget_level:2,best_months:[11,12,1,2,3,4],image:"https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=900&q=82",credit:"Klong Chao Waterfall and clear waters, Koh Kood Trat",bestTime:"Nov – Apr",mapSearch:"Koh Kood Trat Thailand pristine island waterfall beach",hotspots:[{name:"Klong Chao Waterfall",dist:"Centre of island",emoji:"💧"},{name:"Ao Phrao Beach",dist:"Northwest coast",emoji:"🏖️"},{name:"Mangrove Paddle Tour",dist:"North estuary",emoji:"🛶"}],description:"Thailand's fourth-largest island has no 7-Eleven, no jet ski, and no crowd. Waterfalls run straight to the beach, the snorkelling is effortless, and the bungalows still cost less than your airport coffee.",descTh:"เกาะใหญ่อันดับ 4 ของไทยที่ไม่มี 7-Eleven ไม่มีเจ็ทสกี ไม่มีฝูงชน น้ำตกไหลลงสู่ชายหาดโดยตรง",activities:["Waterfall-to-beach jungle hike","Effortless coral snorkelling","Night kayak mangrove firefly tour"],activitiesTh:["เดินป่าน้ำตกลงหาด","ดำน้ำตื้นปะการังง่ายๆ","พายเรือกลางคืนชมหิ่งห้อยในโกงกาง"],captions:{romantic:["Koh Kood has no 7-Eleven. There is nothing urgent here. That is the entire point. 🌴 #KohKood","A waterfall that empties directly into the sea, and we had it to ourselves at 8am on a Tuesday 🌊 Koh Kood, I will protect your secret."],funny:["My phone had no signal for 3 days on Koh Kood. I finished a book, started another, and spoke to 4 real humans. Remarkable. 📚 #DigitalDetox","Asked for the Wi-Fi password. There is no Wi-Fi. I am thriving. 🌴 #KohKood"],informative:["Koh Kood is Thailand fourth-largest island at 105 sq km but has fewer than 2,000 permanent residents 🌴 No large resort chains have been granted permits, preserving its rare jungle-waterfall-beach combination. #KohKoodThailand","The island sits near the Cambodian border with 25m+ visibility water and diverse coral including rare brain coral formations 🗺️ #KohKoodDiving"]},itinerary:{day1:["Morning: Ferry from Trat + settle at beachside bungalow","Afternoon: Klong Chao Waterfall hike & swim","Evening: Fresh crab dinner on the beach"],day2:["Morning: Snorkel Koh Kood coral garden","Afternoon: Mangrove paddle to firefly zone","Evening: Beachfire at Ao Phrao sunset"]},itineraryTh:{day1:["เช้า: เรือเฟอร์รี่จากตราด เข้าที่พักริมหาด","บ่าย: เดินป่าน้ำตกคลองเจ้า","เย็น: ดินเนอร์ปูสดบนชายหาด"],day2:["เช้า: ดำน้ำตื้นปะการังเกาะกูด","บ่าย: พายเรือคายักในโกงกาง","เย็น: กองไฟชายหาดอ่าวพร้าว"]},lat:11.661,lng:102.533,eco_score:91,carbon_km:379,activity_types:["Beach","Nature","Slow Life"],eco_criteria:["No mass development","Marine protected area","Mangrove conservation"]},
+{id:19,name:"Pha Taem National Park",nameTh:"ผาแต้ม",tagline:"Ancient cave art at the edge of the Mekong",taglineTh:"ภาพเขียนสีโบราณริมฝั่งโขง",province:"Ubon Ratchathani",region:"Northeast",moods:["culture","hidden","adventure"],season:["cool","hot"],eco_friendly:true,budget_level:1,best_months:[10,11,12,1,2,3],image:"https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=900&q=82",credit:"Pha Taem cliff paintings and Mekong River, Ubon Ratchathani",bestTime:"Oct – Mar",mapSearch:"Pha Taem National Park Ubon Ratchathani cliff paintings Mekong",hotspots:[{name:"3,000-Year Cave Paintings",dist:"Cliff face trail",emoji:"🎨"},{name:"Sao Chaliang Stone Pillars",dist:"2 km south",emoji:"🗿"},{name:"Kaeng Tana Mekong Rapid",dist:"35 km west",emoji:"🌊"}],description:"Prehistoric paintings of giant catfish, elephants, and hand prints cover a 3km cliff face above the Mekong river — 3,000 years old and completely free to visit. The Isan that Thailand forgot to Instagram.",descTh:"ภาพเขียนสีก่อนประวัติศาสตร์ของปลาบึก ช้าง และรอยมือ ปกคลุมหน้าผายาว 3 กม. เหนือแม่น้ำโขง อายุ 3,000 ปี",activities:["3km cliff trail past prehistoric art","Sunrise over Laos from Pha Taem summit","Kaeng Tana rapids boat trip"],activitiesTh:["เดินชมภาพเขียนสีโบราณตามหน้าผา","ชมพระอาทิตย์ขึ้นเหนือลาวจากผาแต้ม","ล่องเรือแก่งตาน"],captions:{romantic:["3,000-year-old hand prints on a cliff above the Mekong. Someone stood exactly here and said: I was here. Today, so were we. ✋ #PhaTabm","The Mekong glows orange at sunrise seen from a cliff decorated by people who lived 30 centuries before us. Time is wild. 🌅"],funny:["Pha Taem: ancient cave paintings, zero queue, one confused tour group, and the best papaya salad of my entire trip 🥗 #IsanLife","The park ranger told me these paintings are 3,000 years old. I told him my camera roll is 3,000 photos old from this trip alone. 📸 #PhaTabm"],informative:["Pha Taem cliff paintings date to around 1000 BCE and depict giant Mekong catfish, elephants, and human figures 🎨 The 3km walkway trail is free with park entry (~200 THB) and is one of Thailand most significant prehistoric sites. #PhaTabmUbon","The Sao Chaliang mushroom-shaped stone pillars were formed by millions of years of differential erosion — a geological feature unique to the Khorat Plateau 🗿 #KoratPlateau"]},itinerary:{day1:["Dawn: Sunrise over Laos from Pha Taem summit","Morning: Cliff trail walking past prehistoric art","Afternoon: Sao Chaliang stone pillar walk"],day2:["Morning: Kaeng Tana National Park boat trip","Afternoon: Ubon Ratchathani city wat temples","Evening: Night market Ubon street food"]},itineraryTh:{day1:["รุ่งเช้า: พระอาทิตย์ขึ้นจากผาแต้ม","เช้า: เดินชมภาพเขียนสีโบราณ","บ่าย: เดินชมเสาเฉลียง"],day2:["เช้า: ล่องเรือแก่งตาน","บ่าย: วัดวาในเมืองอุบล","เย็น: ตลาดกลางคืนอุบล"]},lat:15.548,lng:105.529,eco_score:82,carbon_km:629,activity_types:["Historical","Nature","Hidden Gem"],eco_criteria:["UNESCO candidate site","Low visitor impact","Mekong ecosystem"]},
+{id:20,name:"Wang Nam Khiao",nameTh:"วังน้ำเขียว",tagline:"Cool air, flower fields & weekender cafes",taglineTh:"อากาศเย็น ทุ่งดอกไม้ และคาเฟ่สุดชิค",province:"Nakhon Ratchasima",region:"Northeast",moods:["slowlife","cafe","hidden"],season:["cool"],eco_friendly:true,budget_level:1,best_months:[11,12,1,2],image:"https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=900&q=82",credit:"Wang Nam Khiao flower fields and cafe district, Korat",bestTime:"Nov – Feb",mapSearch:"Wang Nam Khiao Nakhon Ratchasima cafe flower mountain Thailand",hotspots:[{name:"Flower fields & cafe strip",dist:"Town centre",emoji:"🌸"},{name:"Wang Nam Khiao Waterfall",dist:"8 km northeast",emoji:"💧"},{name:"Glass Cabin Viewpoint Cafe",dist:"4 km hill road",emoji:"🏡"}],description:"Bangkok's closest escape to crisp mountain air. The road into Wang Nam Khiao is now lined with glass-walled cafes perched over misty valleys, strawberry farms, and flower fields that bloom only in cool season.",descTh:"ที่หนีร้อนที่ใกล้กรุงเทพที่สุด ถนนสายคาเฟ่แก้วริมหุบเขาหมอก ฟาร์มสตรอเบอร์รี่ และทุ่งดอกไม้เฉพาะฤดูหนาว",activities:["Cafe crawl along the mountain road","Strawberry picking at hill farms","Sunrise at glass-walled sky cafe"],activitiesTh:["สายคาเฟ่ตลอดถนนภูเขา","เก็บสตรอเบอร์รี่ที่ฟาร์มเนิน","พระอาทิตย์ขึ้นที่คาเฟ่กระจกบนฟ้า"],captions:{romantic:["Glass walls, misty valley, latte art, and someone across the table ☕ Wang Nam Khiao makes me feel like I'm on holiday even when I'm not. #WangNamKhiao","The cafe was perched on the edge of a mountain. The coffee was too hot. The view made neither matter. 🌫️ #IsanCafe"],funny:["Wang Nam Khiao has more cafes per sq km than some Bangkok neighbourhoods. My caffeine intake is a public health concern. ☕☕☕ #WangNamKhiaoCafe","The menu said seasonal flower latte. I don't know what flower. It was pink and the Instagram was immaculate. 🌸 #CoffeeHopping"],informative:["Wang Nam Khiao sits at 600–900m elevation 120km from Korat 🏔️ The cool microclimate (12–20°C in cool season) created a thriving cafe-tourism economy with 50+ venues. #WangNamKhiaoThailand","The area borders Wang Nam Khiao and Thap Lan national parks — 3,600 sq km of dipterocarp forest with gaur, clouded leopard, and Asiatic black bear documented within 20 km of the cafe district. #ThapLanForest"]},itinerary:{day1:["Morning: Glass-walled sunrise cafe","Afternoon: Strawberry farm pick-your-own","Evening: Mountain road cafe crawl at dusk"],day2:["Morning: Wang Nam Khiao Waterfall hike","Afternoon: Local market for Isan snacks","Evening: Drive back via Pak Chong for Khao Yai"]},itineraryTh:{day1:["เช้า: คาเฟ่กระจกชมพระอาทิตย์ขึ้น","บ่าย: ฟาร์มสตรอเบอร์รี่เก็บเอง","เย็น: สายคาเฟ่ถนนภูเขายามเย็น"],day2:["เช้า: เดินป่าน้ำตกวังน้ำเขียว","บ่าย: ตลาดพื้นบ้านขนมอีสาน","เย็น: ขับกลับผ่านปากช่องไปเขาใหญ่"]},lat:14.437,lng:101.817,eco_score:74,carbon_km:260,activity_types:["Cafe","Nature","Slow Life"],eco_criteria:["Mountain forest buffer","Organic farms","Eco-tourism community"]},
+{id:21,name:"Phuket Old Town",nameTh:"เมืองเก่าภูเก็ต",tagline:"Peranakan shophouses, art lanes & specialty coffee",taglineTh:"ตึกชิโน-โปรตุกีส ตรอกศิลปะ และกาแฟสเปเชียลตี้",province:"Phuket",region:"South",moods:["culture","cafe","foodie"],season:["cool","hot"],eco_friendly:false,budget_level:2,best_months:[11,12,1,2,3,4,5],image:"https://images.unsplash.com/photo-1563492065599-3520f775eeed?w=900&q=82",credit:"Sino-Portuguese shophouses, Phuket Old Town heritage district",bestTime:"Nov – May",mapSearch:"Phuket Old Town Sino Portuguese shophouse specialty coffee heritage",hotspots:[{name:"Thalang Road Mural Walk",dist:"Old Town centre",emoji:"🎨"},{name:"Soi Rommanee Specialty Cafes",dist:"Off Phang Nga Rd",emoji:"☕"},{name:"Sunday Walking Street Market",dist:"Thalang Road",emoji:"🏮"}],description:"Phuket's secret lies one hour from Patong. Pastel Sino-Portuguese shophouses house some of Thailand's best specialty coffee bars, and the Sunday Walking Street is the best night market in the entire south.",descTh:"ความลับของภูเก็ตอยู่ห่างจากป่าตองแค่ชั่วโมงเดียว ตึกชิโน-โปรตุกีสสีพาสเทลที่ซ่อนร้านกาแฟสเปเชียลตี้ที่ดีที่สุดในภาคใต้",activities:["Sino-Portuguese architecture walk","Specialty coffee bar crawl Soi Rommanee","Sunday Walking Street night market"],activitiesTh:["เดินชมสถาปัตยกรรมชิโน-โปรตุกีส","สายคาเฟ่ซอยโรแมนติก","ตลาดนัดถนนคนเดินวันอาทิตย์"],captions:{romantic:["Sipped a single-origin pour-over inside a 130-year-old Phuket shophouse while rain tapped the old tiles outside ☕ Phuket Old Town is not what you expected. #PhuketOldTown","The mural is painted across an entire alleyway. We walked through it three times pretending we had not. 🎨 #TalangRoad"],funny:["Phuket Old Town exists 45 minutes from Patong and appears to be a completely different country. Highly recommend the second country. ☕ #PhuketOldTownVsPatong","Ordered a coffee. It came with a flavour wheel, a lecture on processing methods, and a 15-minute brew time. I have never felt more humble in a cafe. #SpecialtyCoffee"],informative:["Phuket Old Town Sino-Portuguese shophouses were built 1890–1930 by Chinese tin-mining merchants 🏛️ The architecture fuses Southern Chinese courtyard design with European arched colonnades. Sunday Walking Street runs 17:00–22:00 on Thalang Road. #PhuketOldTownHeritage","Soi Rommanee was restored from a derelict street into Phuket specialty coffee hub 2012–2018 ☕ Now houses 8+ third-wave coffee bars in heritage buildings — among the highest density of specialty cafes per block in Thailand. #SoiRommanee"]},itinerary:{day1:["Morning: Specialty coffee at Soi Rommanee","Afternoon: Old Town architecture self-guided walk","Evening: Sunday Walking Street food & art"],day2:["Morning: Rang Hill viewpoint sunrise run","Afternoon: Phuket Thai Hua Museum","Evening: Coconut ice cream & roti at local market"]},itineraryTh:{day1:["เช้า: กาแฟสเปเชียลตี้ซอยโรแมนติก","บ่าย: เดินชมเมืองเก่าด้วยตัวเอง","เย็น: ตลาดถนนคนเดินวันอาทิตย์"],day2:["เช้า: วิ่งชมพระอาทิตย์ขึ้นเขารัง","บ่าย: พิพิธภัณฑ์ไทยหัวภูเก็ต","เย็น: ไอศกรีมมะพร้าวและโรตีตลาด"]},lat:7.886,lng:98.393,eco_score:42,carbon_km:853,activity_types:["Culture","Cafe","Food"],eco_criteria:[]},
+{id:22,name:"Doi Mae Salong",nameTh:"ดอยแม่สลอง",tagline:"Yunnan tea mountains & Chinese hill town",taglineTh:"ไร่ชายูนนานและหมู่บ้านจีนบนดอย",province:"Chiang Rai",region:"North",moods:["hidden","slowlife","cafe"],season:["cool"],eco_friendly:true,budget_level:1,best_months:[11,12,1,2],image:"https://images.unsplash.com/photo-1528181304800-259b08848526?w=900&q=82",credit:"Tea terraces and misty mountains, Doi Mae Salong Chiang Rai",bestTime:"Nov – Feb",mapSearch:"Doi Mae Salong Chiang Rai tea plantation Yunnan China hill",hotspots:[{name:"Shin Sane Tea Plantation",dist:"3 km ridge road",emoji:"🍵"},{name:"Morning Mist Market",dist:"Town centre, 6–8am",emoji:"🌫️"},{name:"Mae Salong Chinese Temple",dist:"Town centre",emoji:"🏮"}],description:"A slice of Yunnan province lodged in the mountains of northern Thailand. Nationalist Chinese troops settled here in the 1950s and planted Oolong tea — today their grandchildren run hilltop tea houses where you drink, look into Myanmar, and forget what day it is.",descTh:"ชิ้นส่วนของมณฑลยูนนานที่ฝังอยู่ในภูเขาภาคเหนือ ทายาทของทหารจีนปลูกชาอู่หลงและเปิดร้านชาบนยอดดอย",activities:["Tea tasting at ridge-top plantation","6am morning fog market","Trek to Myanmar border viewpoint"],activitiesTh:["ชิมชาที่ไร่บนสันเขา","ตลาดหมอก 6 โมงเช้า","เดินป่าสู่จุดชมวิวชายแดนพม่า"],captions:{romantic:["Oolong tea on a ridge overlooking Myanmar, fog below, ceramic cup warming both hands — Doi Mae Salong is the most quietly romantic place in Thailand 🍵 #DoiMaeSalong","We sat in a glass-walled teahouse until the mist cleared and then sat some more because it cleared into something even better. #ChiangRaiTea"],funny:["Doi Mae Salong has Chinese food, Chinese tea, Chinese signage, and is very much in Thailand. My GPS was also confused. 🗺️ #DoiMaeSalong","The morning market sells freshly-picked oolong, dumplings, and something I can only describe as fog on a tray. I mean that as a compliment. 🌫️"],informative:["Doi Mae Salong was settled in 1961 by remnants of the 93rd Division of the Republic of China Army 🏔️ They brought Oolong and Pu-Erh tea cultivation from Yunnan — the terraced plantations now cover 10,000+ rai and produce tea exported internationally. #DoiMaeSalongHistory","The town sits at 1,300m elevation 12km from the Myanmar border 🌿 Thai Oolong from here is rated among Asia finest by international tea competitions. #ThaiOolongTea"]},itinerary:{day1:["Dawn: Morning mist market exploration","Morning: Shin Sane tea plantation tour & tasting","Afternoon: Temple & Chinese memorial garden"],day2:["Morning: Trek to Myanmar border ridge viewpoint","Afternoon: Choui Fong panoramic cafe","Evening: Return to Chiang Rai"]},itineraryTh:{day1:["รุ่งเช้า: สำรวจตลาดหมอก","เช้า: ไร่ชาชินแสงทัวร์และชิม","บ่าย: วัดและสวนอนุสรณ์จีน"],day2:["เช้า: เดินป่าสู่สันเขาชายแดนพม่า","บ่าย: คาเฟ่ชวยฟงวิวพาโนรามา","เย็น: เดินทางกลับเชียงราย"]},lat:20.283,lng:99.648,eco_score:79,carbon_km:892,activity_types:["Cafe","Culture","Hidden Gem"],eco_criteria:["Organic tea farming","Mountain ecosystem","Cultural heritage preservation"]},
+{id:23,name:"Kanchanaburi",nameTh:"กาญจนบุรี",tagline:"WWII history, river rafts & jungle waterfalls",taglineTh:"ประวัติศาสตร์สงครามโลก แพริมแม่น้ำ และน้ำตกในป่า",province:"Kanchanaburi",region:"Central",moods:["culture","adventure","slowlife"],season:["cool","hot"],eco_friendly:false,budget_level:1,best_months:[10,11,12,1,2,3],image:"https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=82",credit:"Death Railway Bridge over Kwai River, Kanchanaburi",bestTime:"Oct – Mar",mapSearch:"Kanchanaburi Death Railway Bridge River Kwai Thailand WWII",hotspots:[{name:"Bridge on the River Kwai",dist:"Town centre",emoji:"🌉"},{name:"Erawan National Park Falls",dist:"65 km north",emoji:"💦"},{name:"JEATH War Museum",dist:"1 km from bridge",emoji:"🏛️"}],description:"Three hours from Bangkok, the Death Railway bridge still stands over the River Kwai. By day, explore emerald waterfalls in Erawan National Park. By night, sleep on a floating raft house rocked by the river.",descTh:"ห่างกรุงเทพ 3 ชั่วโมง สะพานข้ามแม่น้ำแคว ยังยืนตระหง่าน เที่ยวน้ำตกมรกตเอราวัณกลางวัน นอนแพริมแม่น้ำกลางคืน",activities:["Walk the Death Railway bridge","Swim all 7 tiers Erawan Falls","Float-house river raft overnight"],activitiesTh:["เดินบนสะพานทางรถไฟมรณะ","ว่ายน้ำ 7 ชั้นน้ำตกเอราวัณ","นอนแพริมแม่น้ำแคว"],captions:{romantic:["Slept on a bamboo raft floating on the River Kwai, woke to mist on the water and roosters deep in the jungle 🌊 Kanchanaburi before 6am is magic. #Kanchanaburi","A history heavy with sacrifice and a landscape of impossible beauty — Kanchanaburi holds both without contradiction. 🌉 #RiverKwai"],funny:["Erawan Falls has 7 tiers. I swam in all 7. Tier 7 required negotiating with 3 fish who were clearly the landlords. 🐟 #ErawanFalls","The overnight raft house rocked so gently I was not sure if I slept or just became part of the river. 10/10 philosophical experience. 🛶 #RiverKwai"],informative:["The Death Railway was built in 1943 using Allied POW and Asian forced labour — 90,000+ people died over 18 months 🌉 The iconic bridge over the River Kwai remains standing and operational as a tourist railway. #DeathRailwayHistory","Erawan National Park 7-tier waterfall is fed by limestone springs that give the water its distinctive turquoise colour 💦 The name Erawan refers to the three-headed white elephant of Hindu mythology. #ErawanFalls"]},itinerary:{day1:["Morning: Bridge on the River Kwai walk","Afternoon: JEATH War Museum & Allied cemetery","Evening: Float-house sunset dinner on the Kwai"],day2:["Morning: Erawan National Park day trip","Afternoon: Swim all 7 waterfall tiers","Evening: Night market back in Kanchanaburi town"]},itineraryTh:{day1:["เช้า: เดินบนสะพานข้ามแม่น้ำแคว","บ่าย: พิพิธภัณฑ์สงครามและสุสาน","เย็น: ดินเนอร์บนแพริมแม่น้ำ"],day2:["เช้า: อุทยานแห่งชาติเอราวัณ","บ่าย: ว่ายน้ำทั้ง 7 ชั้น","เย็น: ตลาดกลางคืนในเมืองกาญจน์"]},lat:14.004,lng:99.535,eco_score:50,carbon_km:129,activity_types:["Historical","Nature","Adventure"],eco_criteria:[]},
+{id:24,name:"Chiang Mai Cafe District",nameTh:"ย่านคาเฟ่เชียงใหม่",tagline:"Thailand's capital of specialty coffee & creative cafes",taglineTh:"เมืองหลวงแห่งกาแฟสเปเชียลตี้และคาเฟ่ครีเอทีฟของไทย",province:"Chiang Mai",region:"North",moods:["cafe","slowlife","culture"],season:["cool","hot","rainy"],eco_friendly:true,budget_level:2,best_months:[1,2,3,4,5,6,7,8,9,10,11,12],image:"https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=900&q=82",credit:"Specialty coffee lush interior Chiang Mai Nimman cafe scene",bestTime:"Year-round",mapSearch:"Chiang Mai specialty coffee cafe Nimman Road aesthetic Thailand",hotspots:[{name:"Nimman Road Cafe Strip",dist:"Nimman Soi 1–17",emoji:"☕"},{name:"Santitham Morning Market Cafes",dist:"10 min from Nimman",emoji:"🌿"},{name:"Old City Courtyard Cafes",dist:"Inside the moat",emoji:"🏛️"}],description:"Chiang Mai has quietly built the best cafe scene in Southeast Asia. Roasters source single-origin beans from hill tribe farms within 100km. The cafes are set inside converted teak houses, temple courtyards, and rice barns with pour-over bars better than most Tokyo spots.",descTh:"เชียงใหม่สร้างฉากคาเฟ่ที่ดีที่สุดในเอเชียตะวันออกเฉียงใต้อย่างเงียบๆ คั่วกาแฟซิงเกิลออริจินจากไร่ชาวเขาในรัศมี 100 กม.",activities:["Pour-over at Ristr8to or Wawee Coffee","Teak house garden cafe on Nimman","Hilltribe single-origin cupping session"],activitiesTh:["pour-over ที่ Ristr8to หรือ Wawee Coffee","คาเฟ่สวนบ้านไม้สักถนนนิมมาน","ชิมกาแฟ single-origin จากชาวเขา"],captions:{romantic:["Chiang Mai cafes feel like someone designed a room specifically for the conversation you needed to have ☕ Hours feel like minutes here. #ChiangMaiCafe","Pour-over from beans grown 80km away, in a century-old teak house, mountains visible from my window — there is no version of this that is not perfect. 🌿 #NimmanCafe"],funny:["Chiang Mai coffee culture is so advanced I was asked to evaluate the terroir of my latte. I said excellent. I do not know what terroir means. I have never felt more at home. ☕ #SpecialtyCoffee","Spent 4 hours in one Nimman cafe. Ordered 3 coffees. Wrote half a novel. Considered moving here permanently. 🏠 #ChiangMaiLife"],informative:["Chiang Mai specialty coffee grew from hill tribe arabica in the 1990s — Doi Chaang, Doi Tung, and Maejantai are now internationally awarded coffee origins 🌱 The city hosts Thailand largest specialty coffee festival annually. #ChiangMaiCoffee","Nimman Road has 80+ cafes within the Nimman-Santitham-Old City triangle — the highest density of specialty coffee in mainland Southeast Asia 🎨 #NimmanChiangMai"]},itinerary:{day1:["Morning: Nimman pour-over trail (3 cafes)","Afternoon: Old City courtyard cafe inside Wat","Evening: Night Bazaar then craft beer garden"],day2:["Morning: Santitham market breakfast & local cafe","Afternoon: Doi Tung hilltribe coffee day trip","Evening: Rooftop sunset cocktail Bar Nimman"]},itineraryTh:{day1:["เช้า: เดินสาย pour-over ถนนนิมมาน (3 ร้าน)","บ่าย: คาเฟ่ลานวัดในเมืองเก่า","เย็น: ไนท์บาซาร์และบาร์คราฟต์เบียร์"],day2:["เช้า: ตลาดสันติธรรม อาหารเช้าและคาเฟ่","บ่าย: วันทริปกาแฟดอยตุง","เย็น: ค็อกเทลดาดฟ้าบาร์นิมมาน"]},lat:18.796,lng:98.968,eco_score:70,carbon_km:688,activity_types:["Cafe","Culture","Slow Life"],eco_criteria:["Hill tribe sourcing","Organic arabica","Community trade"]},
+{id:25,name:"Khao Sam Roi Yot",nameTh:"เขาสามร้อยยอด",tagline:"Freshwater marshes, cave temples & flamingos",taglineTh:"พรุน้ำจืด วัดในถ้ำ และนกฟลามิงโก้",province:"Prachuap Khiri Khan",region:"Central",moods:["hidden","adventure","slowlife"],season:["cool","hot"],eco_friendly:true,budget_level:1,best_months:[10,11,12,1,2,3,4,5],image:"https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=900&q=82",credit:"Phraya Nakhon Cave royal pavilion, Khao Sam Roi Yot National Park",bestTime:"Oct – May",mapSearch:"Khao Sam Roi Yot national park cave temple flamingo Thailand Prachuap",hotspots:[{name:"Phraya Nakhon Cave Temple",dist:"30 min boat + 30 min hike",emoji:"🛕"},{name:"Thung Sam Roi Yot Marsh",dist:"Park entrance zone",emoji:"🦩"},{name:"Khao Daeng Viewpoint",dist:"3 km from park HQ",emoji:"⛰️"}],description:"A sunbeam falls through a cave ceiling onto a golden royal pavilion, birds wade through reed marshes the size of Bangkok, and limestone peaks rise straight from flatland. All 63km from Hua Hin.",descTh:"แสงอาทิตย์ส่องผ่านเพดานถ้ำลงมาบนพระที่นั่งทองคำ นกลุยพรุน้ำจืด และยอดหินปูนพุ่งขึ้นจากพื้นราบ ห่างหัวหินแค่ 63 กม.",activities:["Boat + hike to Phraya Nakhon Cave","Birdwatch the freshwater marsh at dawn","Khao Daeng limestone summit hike"],activitiesTh:["เรือ+เดินป่าสู่ถ้ำพระยานคร","ดูนกในพรุยามรุ่งสาง","ขึ้นยอดหินปูนเขาแดง"],captions:{romantic:["A sunbeam hit a royal pavilion inside a cave and we both stood there for a very embarrassing amount of time 🌟 Phraya Nakhon Cave, you win. #KhaoSamRoiYot","The flamingos were not supposed to be here. The sign said egrets. Nature did not read the sign. 🦩 Beautifully chaotic."],funny:["Phraya Nakhon Cave: 430 steps down to a beach, then a boat, then another 430-step hike. The golden pavilion inside was worth every step. My legs did not agree. 🏛️ #KhaoSamRoiYot","The marsh guide named every bird in Thai, English, and Latin. I nodded along to all three like a scientist. I saw a pink bird. That is my contribution to ornithology."],informative:["Khao Sam Roi Yot contains Thailand largest freshwater marsh (Thung Sam Roi Yot, 350 sq km) 🦩 Over 300 bird species recorded including the critically endangered spoon-billed sandpiper. #KhaoSamRoiYotBirds","Phraya Nakhon Cave contains the Khuha Kharuehat royal pavilion built in 1890 for King Rama V 🛕 A natural skylight creates a dramatic light shaft at around 10:30am. #PhrayaNakhonCave"]},itinerary:{day1:["Morning: Boat to Laem Sala Beach then hike Phraya Nakhon","Afternoon: Return and Khao Daeng viewpoint","Evening: Pranburi fresh seafood dinner"],day2:["Dawn: Sunrise birdwatch Thung Sam Roi Yot marsh","Morning: Kayak through mangrove channels","Afternoon: Drive back via Hua Hin beach stop"]},itineraryTh:{day1:["เช้า: เรือสู่แหลมสาลา เดินขึ้นถ้ำพระยานคร","บ่าย: กลับและขึ้นเขาแดง","เย็น: ดินเนอร์ซีฟู้ดปราณบุรี"],day2:["รุ่งเช้า: ดูนกยามพระอาทิตย์ขึ้นพรุ","เช้า: พายเรือในโกงกาง","บ่าย: ขับกลับแวะหาดหัวหิน"]},lat:12.172,lng:99.969,eco_score:81,carbon_km:318,activity_types:["Nature","Historical","Adventure"],eco_criteria:["Ramsar wetland","Marine national park","Royal forest reserve"]},
+{id:26,name:"Pak Chong Cafe Trail",nameTh:"ปากช่อง สายคาเฟ่เขาใหญ่",tagline:"Farm cafes, sunflower fields & vineyard coffee",taglineTh:"คาเฟ่ฟาร์ม ทุ่งทานตะวัน และกาแฟในสวนองุ่น",province:"Nakhon Ratchasima",region:"Northeast",moods:["cafe","slowlife","foodie"],season:["cool","hot"],eco_friendly:false,budget_level:2,best_months:[10,11,12,1,2,3,4,5],image:"https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=900&q=82",credit:"Cafe and sunflower farm, Pak Chong Khao Yai area Korat",bestTime:"Oct – May",mapSearch:"Pak Chong Khao Yai cafe farm sunflower vineyard Thailand coffee",hotspots:[{name:"Primo Piazza Italian Farm Cafe",dist:"Km 7 Khao Yai road",emoji:"☕"},{name:"Farm Chokchai farm-to-cup",dist:"Pak Chong main road",emoji:"🐄"},{name:"Sunflower fields (Nov–Jan)",dist:"Lam Takhong area",emoji:"🌻"}],description:"The road from Pak Chong to Khao Yai has quietly become one of Thailand's most photographed cafe trails — Italian-style farm cafes, organic dairy, sunflower fields, and vineyard terraces, all two hours from Bangkok.",descTh:"ถนนจากปากช่องสู่เขาใหญ่กลายเป็นสายคาเฟ่ที่ถ่ายรูปมากที่สุดแห่งหนึ่งของไทย คาเฟ่ฟาร์มสไตล์อิตาลี ทุ่งทานตะวัน และระเบียงไวน์",activities:["Farm cafe trail along Khao Yai road","Sunflower field golden hour photos","Farm Chokchai dairy brunch tour"],activitiesTh:["สายคาเฟ่ตลอดถนนเขาใหญ่","ถ่ายรูปทุ่งทานตะวันยามเย็น","ทัวร์ฟาร์มโชคชัยมื้อเช้า"],captions:{romantic:["A cafe surrounded by sunflowers, a cold brew, and the Korat plateau stretching to the horizon — the weekend I did not know I needed ☕🌻 #KhaoYaiCafe","Italian countryside aesthetics in central Thailand — should be impossible, absolutely is not. 🇮🇹🇹🇭 #PakChong #PrimoPiazza"],funny:["The cafe had a dress code of looking like you are in the Italian countryside. I arrived in flip-flops. They let me in. The cappuccino was better than Rome. ☕ #FarmCafe","Sunflower field golden hour: 200 people, 200 tripods, one patient field of flowers 🌻 Mine is still the best photo. (It is not.) #KhaoYaiInstagram"],informative:["The Pak Chong-Khao Yai corridor generates over 8 billion THB annually 🌿 Farm Chokchai (est. 1957) pioneered agritourism in Thailand with 500,000+ visitors per year. #FarmChokchai","The sunflower bloom along Lam Takhong reservoir (Nov–Jan) was originally a royal project cover crop 🌻 It became viral in 2015 and now draws weekend crowds from Bangkok every cool season. #KhaoYaiSunflowers"]},itinerary:{day1:["Morning: Primo Piazza farm cafe brunch","Afternoon: Vineyard terrace wine tasting","Evening: Khao Yai township night market"],day2:["Dawn: Sunflower field golden hour","Morning: Farm Chokchai dairy tour & breakfast","Afternoon: Khao Yai National Park day hike"]},itineraryTh:{day1:["เช้า: คาเฟ่ฟาร์ม Primo Piazza บรันช์","บ่าย: ระเบียงไวน์ชิมไวน์","เย็น: ตลาดกลางคืนเขาใหญ่"],day2:["รุ่งเช้า: ถ่ายรูปทุ่งทานตะวัน","เช้า: ทัวร์ฟาร์มโชคชัย อาหารเช้า","บ่าย: เดินป่าอุทยานแห่งชาติเขาใหญ่"]},lat:14.564,lng:101.413,eco_score:55,carbon_km:220,activity_types:["Cafe","Food","Nature"],eco_criteria:[]},
+{id:27,name:"Mae Hong Son Loop",nameTh:"วนรอบแม่ฮ่องสอน",tagline:"1,864 curves through the last mountain kingdom",taglineTh:"1,864 โค้งผ่านอาณาจักรภูเขาสุดท้าย",province:"Mae Hong Son",region:"North",moods:["adventure","hidden","slowlife"],season:["cool"],eco_friendly:true,budget_level:1,best_months:[11,12,1],image:"https://images.unsplash.com/photo-1548813395-71cddf1e9e02?w=900&q=82",credit:"Mountain road and misty valleys Mae Hong Son loop Thailand",bestTime:"Nov – Jan",mapSearch:"Mae Hong Son loop mountain road motorcycle misty Thailand",hotspots:[{name:"Pang Oung Reservoir",dist:"35 km north of Mae Hong Son",emoji:"🏔️"},{name:"Wat Phra That Doi Kong Mu",dist:"Mae Hong Son town",emoji:"🛕"},{name:"Tham Lot Cave",dist:"Soppong, 75km north",emoji:"🕯️"}],description:"The 600km loop from Chiang Mai through Mae Hong Son is Thailand's greatest motorcycle journey — 1,864 curves, misty mountain passes, Karen and Shan villages, and a reservoir so calm locals call it Thailand's Switzerland.",descTh:"วงรอบ 600 กม. จากเชียงใหม่ผ่านแม่ฮ่องสอน คือการเดินทางมอเตอร์ไซค์ที่ยิ่งใหญ่ที่สุดของไทย 1,864 โค้ง หมู่บ้านกะเหรี่ยงและไทใหญ่",activities:["Motorcycle the full 600km loop","Sunrise at Pang Oung reservoir","Bamboo-raft river float Pai"],activitiesTh:["ขับมอเตอร์ไซค์ครบ 600 กม.","พระอาทิตย์ขึ้นที่อ่างเก็บน้ำปางอุ๋ง","ล่องแพไม้ไผ่แม่น้ำปาย"],captions:{romantic:["600km, 1,864 curves, two helmets, and mountain mist rolling in from Burma every morning ⛰️ The Mae Hong Son loop is not a road trip. It is a relationship. #MaeHongSonLoop","Got slightly lost between curve 847 and 848. Found a coffee shop run by a Karen grandmother. Best morning of the trip. #ThailandMotorcycle 🏍️"],funny:["The sign said 1,864 curves. I counted 1,863. I am either very good at maths or there is a missing curve in Mae Hong Son. 🔢 #MaeHongSonLoop","My inner ear has filed a formal complaint regarding the decision to do this route in one day. Do it over three days. 🏍️ #NotRecommended"],informative:["The Mae Hong Son loop (routes 108 and 1095) passes through 4 provinces covering 600km of mountain road 🏔️ The route was only fully paved in the 1980s — before then Mae Hong Son was accessible only by plane or 3-day forest walk. #MaeHongSonHistory","Pang Oung reservoir was built in 1977 as part of a royal forestry project 🌲 The pine-forested shoreline with morning mist earned it the nickname Switzerland of Thailand. Best Nov–Jan. #PangOung"]},itinerary:{day1:["Chiang Mai to Mae Chaem to Mae Sariang (300km, stop at Ob Luang Gorge)","Evening: Mae Sariang riverside guesthouse"],day2:["Mae Sariang to Mae Hong Son to Pang Oung (130km)","Evening: Pang Oung lakeside mist watching"]},itineraryTh:{day1:["เชียงใหม่ → แม่แจ่ม → แม่สะเรียง (300 กม. แวะผาช่อง)","เย็น: เกสต์เฮ้าส์ริมน้ำแม่สะเรียง"],day2:["แม่สะเรียง → แม่ฮ่องสอน → ปางอุ๋ง (130 กม.)","เย็น: ชมหมอกริมทะเลสาบปางอุ๋ง"]},lat:19.301,lng:97.967,eco_score:84,carbon_km:600,activity_types:["Adventure","Nature","Culture"],eco_criteria:["Border forest reserve","Low-footprint touring","Ethnic minority support"]},
+{id:28,name:"Chanthaburi Gem Market",nameTh:"ตลาดพลอยจันทบุรี",tagline:"Rubies, river town & the best fruit in Thailand",taglineTh:"ทับทิม เมืองริมแม่น้ำ และผลไม้ดีที่สุดในไทย",province:"Chanthaburi",region:"East",moods:["hidden","culture","foodie"],season:["cool","hot","rainy"],eco_friendly:false,budget_level:1,best_months:[1,2,3,4,5,6,7,8,9,10,11,12],image:"https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=900&q=82",credit:"Cathedral and gem market street, Chanthaburi town East Thailand",bestTime:"Year-round (gem market Fri–Sun)",mapSearch:"Chanthaburi gem market ruby sapphire Thailand east river town",hotspots:[{name:"Gem Market (Fri–Sun 8am–3pm)",dist:"Si Chan Road",emoji:"💎"},{name:"Cathedral of Immaculate Conception",dist:"Riverside, 100m walk",emoji:"⛪"},{name:"Chanthaboon Riverside Community",dist:"Old town, riverfront",emoji:"🏚️"}],description:"Every weekend, billions of baht in rubies and sapphires change hands on a single street in a sleepy river town that also happens to have Thailand's largest Catholic cathedral, the best durian orchards in the country, and zero other tourists.",descTh:"ทุกสัปดาห์ พลอยหลายพันล้านบาทเปลี่ยนมือบนถนนสายเดียวในเมืองริมแม่น้ำที่เงียบสงบ ยังมีวิหารคาทอลิกที่ใหญ่ที่สุดในไทยและทุเรียนที่ดีที่สุด",activities:["Watch gem traders on Si Chan Road","Old French colonial cathedral & riverside walk","Durian & rambutan orchard tour"],activitiesTh:["ชมพ่อค้าพลอยถนนศรีจันทร์","วิหารโบราณฝรั่งเศสและเดินริมน้ำ","ทัวร์สวนทุเรียนและเงาะ"],captions:{romantic:["A river town where every Friday the streets fill with men holding rubies up to the light, and time slows completely 💎 Chanthaburi is unexpectedly magical. #Chanthaburi","Had rambutan from the tree, durian at the source, and cold coffee in a 100-year-old shophouse. The east coast of Thailand is dramatically underrated. 🌺"],funny:["Chanthaburi gem market: billions in rubies on a folding table on a public street, nobody impressed, everyone eating durian simultaneously. Peak Thailand. 💎 #ChanGemMarket","A man showed me a ruby the size of my thumbnail and told me the price. I laughed. He also laughed. We understood each other perfectly. 💎 #GemMarket"],informative:["Chanthaburi has been a major ruby and sapphire hub since the 15th century 💎 The Si Chan Road market operates Friday–Sunday handling an estimated 5–7 billion THB in gem transactions weekly. #ChanthaburiGems","The Cathedral of the Immaculate Conception (1909) is Thailand largest Catholic church, reflecting Chanthaburi unique history as a French protectorate (1893–1905) ⛪ #ChanthaburiCathedral"]},itinerary:{day1:["Morning: Gem market watch & browse Si Chan Road","Afternoon: Cathedral & Chanthaboon riverside walk","Evening: Riverside seafood in the old town"],day2:["Morning: Durian orchard tour (in season May–Aug)","Afternoon: Laem Sing beach day trip","Evening: Night market local specialties"]},itineraryTh:{day1:["เช้า: ชมตลาดพลอยถนนศรีจันทร์","บ่าย: วิหารและชุมชนจันทบูรริมน้ำ","เย็น: ซีฟู้ดริมน้ำในเมืองเก่า"],day2:["เช้า: ทัวร์สวนทุเรียน (ฤดู: พ.ค.–ส.ค.)","บ่าย: วันทริปหาดแหลมสิงห์","เย็น: ตลาดกลางคืนของกิน"]},lat:12.609,lng:102.104,eco_score:40,carbon_km:250,activity_types:["Culture","Food","Hidden Gem"],eco_criteria:[]},
+{id:29,name:"Koh Lipe",nameTh:"เกาะหลีเป๊ะ",tagline:"The Maldives of Thailand at a fraction of the price",taglineTh:"มัลดีฟส์ของไทย ในราคาที่จ่ายได้",province:"Satun",region:"South",moods:["beach","slowlife","hidden"],season:["cool","hot"],eco_friendly:true,budget_level:2,best_months:[11,12,1,2,3,4],image:"https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=900&q=82",credit:"Pattaya Beach Koh Lipe Satun southern Thailand",bestTime:"Nov – Apr",mapSearch:"Koh Lipe Satun Thailand white sand turquoise water south beach",hotspots:[{name:"Sunrise Beach",dist:"East coast",emoji:"🌅"},{name:"Koh Rawi snorkel day trip",dist:"45 min by speedboat",emoji:"🤿"},{name:"Walking Street at sunset",dist:"Centre of island",emoji:"🏮"}],description:"Thailand's southernmost inhabited island, 60km from Malaysia, earns the Maldives comparison honestly. Three beaches, glass-clear water, and a walking street that fits 40 restaurants into 200 metres.",descTh:"เกาะที่มีคนอาศัยอยู่ทางใต้สุดของไทย ห่างมาเลเซีย 60 กม. ชายหาดสามแห่ง น้ำใสราวภาพสกรีนเซฟเวอร์",activities:["Sunrise Beach morning swim","Koh Rawi snorkel day trip","Walking Street sunset dinner"],activitiesTh:["ว่ายน้ำหาดซันไรส์ยามเช้า","ดำน้ำตื้นเกาะระวิ","ดินเนอร์ Walking Street ยามเย็น"],captions:{romantic:["Koh Lipe: three beaches, zero cars, one walking street, and water so clear you can read a book through it 🌊 The Maldives comparison is, for once, not hyperbole. #KohLipe","Watched the sun set from a longtail with a cold Singha. The full weight of how extraordinary ordinary evenings can be. 🌅 #ThailandSouth"],funny:["Koh Lipe Walking Street is 200 metres long and contains 40 restaurants. Greatest urban planning decision I have witnessed. 🍜 #WalkingStreet","The snorkelling guide said the fish here are friendly. He meant they swim directly into your face. He was not exaggerating. 🐟 #KohLipeSnorkel"],informative:["Koh Lipe sits within Tarutao Marine National Park covering 1,490 sq km with 51 islands 🌊 Coral cover at Koh Rawi exceeds 60%, among the healthiest in the Gulf-Andaman system. #TarutaoMarinePark","The island is home to Urak Lawoi sea nomads who have inhabited Lipe for centuries 🏘️ Cultural preservation remains an ongoing concern alongside rapid tourism development. #UrakLawoiKohLipe"]},itinerary:{day1:["Morning: Sunrise Beach swim","Afternoon: Kayak to Koh Adang national park","Evening: Walking Street sunset crawl"],day2:["Morning: Speedboat to Koh Rawi coral gardens","Afternoon: Back to Lipe hammock & snorkel Pattaya Beach","Evening: Fire show on Sunset Beach"]},itineraryTh:{day1:["เช้า: ว่ายน้ำหาดซันไรส์","บ่าย: พายเรือคายักสู่เกาะอาดัง","เย็น: เดินสาย Walking Street"],day2:["เช้า: สปีดโบ๊ตไปดำน้ำตื้นเกาะระวิ","บ่าย: กลับเกาะหลีเป๊ะ แฮมม็อคริมหาด","เย็น: ไฟโชว์บนหาดซันเซต"]},lat:6.495,lng:99.299,eco_score:72,carbon_km:1079,activity_types:["Beach","Nature","Slow Life"],eco_criteria:["Marine national park","Sea nomad heritage","Coral protection"]},
+{id:30,name:"Bangkok Cafe Scene",nameTh:"คาเฟ่และรูฟท็อปกรุงเทพ",tagline:"The world's best coffee city you didn't know about",taglineTh:"เมืองกาแฟที่ดีที่สุดในโลกที่คุณยังไม่รู้จัก",province:"Bangkok",region:"Central",moods:["cafe","foodie","culture"],season:["cool","hot","rainy"],eco_friendly:false,budget_level:2,best_months:[1,2,3,4,5,6,7,8,9,10,11,12],image:"https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=900&q=82",credit:"Specialty cafe and Bangkok city skyline rooftop Thailand",bestTime:"Year-round",mapSearch:"Bangkok specialty cafe coffee Ari On Nut aesthetic Thailand rooftop",hotspots:[{name:"Ari cafe district (BTS Ari)",dist:"BTS Ari station",emoji:"☕"},{name:"On Nut neighbourhood cafes",dist:"BTS On Nut station",emoji:"🏡"},{name:"Rooftop bars Silom-Sathorn",dist:"BTS Chong Nonsi",emoji:"🌃"}],description:"Bangkok has overtaken Melbourne and Tokyo as the city with the most interesting specialty coffee scene per square kilometre. Ari, On Nut, and Ekkamai have more pour-over bars per block than anywhere on Earth — and a rooftop for every hour of the sunset.",descTh:"กรุงเทพแซงหน้าเมลเบิร์นและโตเกียวในฐานะเมืองที่มีฉากกาแฟสเปเชียลตี้ที่น่าสนใจที่สุดต่อตารางกิโลเมตร",activities:["Ari morning cafe crawl (3 stops)","On Nut neighbourhood flat white trail","Silom rooftop sunset cocktails"],activitiesTh:["สายคาเฟ่ย่านอารีย์ (3 ร้าน)","flat white trail ย่านอ่อนนุช","ค็อกเทลดาดฟ้าสีลมยามเย็น"],captions:{romantic:["Bangkok has a cafe where you sit in a courtyard garden and 10 floors of city rise around you and it still feels quiet ☕ That cafe fixed something in me. #BangkokCafe","Found us a rooftop with two chairs, one skyline, and a Negroni each. The city did the rest. 🌆 #BangkokRooftop"],funny:["Bangkok cafe update: asked to choose between 14 milk alternatives and 8 processing methods. I said yes. The barista understood. ☕ #AriCafe","Walked into a cafe in Ari that was so aesthetic I couldn't leave for 3 hours. Send help. Also send a flat white. ☕ #BangkokCafeHopping"],informative:["Bangkok was ranked the world top city for specialty coffee by multiple guides in 2023 ☕ The Ari-Ekkamai-On Nut triangle has 200+ specialty venues, exceeding Melbourne CBD density. Thai baristas have won World Barista Championship medals in 2019, 2021, and 2023. #BangkokCoffee","The Bangkok rooftop bar phenomenon began with Lebua Sky Bar (2006) and now encompasses 80+ venues 🌃 The Silom-Sathorn corridor offers 360 degree views over the Chao Phraya river bend at 50-80 floors. #BangkokRooftop"]},itinerary:{day1:["Morning: Ari cafe crawl (Roots, Ceresia, Kaizen Coffee)","Afternoon: Ekkamai neighbourhood gallery & cafe","Evening: Asiatique riverside then Lebua rooftop bar"],day2:["Morning: On Nut local cafe & market","Afternoon: Chatuchak Weekend Market","Evening: Silom rooftop sunset then street food tour"]},itineraryTh:{day1:["เช้า: สายคาเฟ่อารีย์ (Roots, Ceresia, Kaizen)","บ่าย: แกลเลอรี่ + คาเฟ่ย่านเอกมัย","เย็น: อาเซียทีค + รูฟท็อปบาร์ Lebua"],day2:["เช้า: คาเฟ่ท้องถิ่นย่านอ่อนนุช","บ่าย: ตลาดนัดจตุจักร","เย็น: รูฟท็อปสีลมแล้วทัวร์สตรีทฟู้ด"]},lat:13.756,lng:100.502,eco_score:30,carbon_km:0,activity_types:["Cafe","Food","Culture"],eco_criteria:[]}
 ];
 
 const MOODS=[
@@ -947,6 +1143,7 @@ const MOODS=[
   {id:"foodie",   label:"Foodie Trail",  labelTh:"เส้นทางอาหาร",  emoji:"🍜",desc:"Street food, night markets, cooking classes",       descTh:"สตรีทฟู้ด ตลาดกลางคืน คลาสทำอาหาร",           color:"#ef4444",image:"https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=75"},
   {id:"slowlife", label:"Slow Life",     labelTh:"ชีวิตช้าๆ",      emoji:"🌿",desc:"Cafés, sunsets, zero FOMO, pure relaxation",        descTh:"คาเฟ่ พระอาทิตย์ตก ไร้ความกังวล ผ่อนคลาย",    color:"#8b5cf6",image:"https://images.unsplash.com/photo-1470770903676-69b98201ea1c?w=600&q=75"},
   {id:"hidden",   label:"Hidden Gems",   labelTh:"อัญมณีซ่อนเร้น",emoji:"💎",desc:"Off the beaten path — real Thailand",              descTh:"นอกเส้นทางหลัก — ไทยแท้ๆ",                     color:"#ec4899",image:"https://images.unsplash.com/photo-1573843981267-be1999ff37cd?w=600&q=75"},
+  {id:"cafe",     label:"Cafe Hopping",  labelTh:"สายคาเฟ่",        emoji:"☕",desc:"Explore Thailand's most photogenic & unique cafes", descTh:"ค้นพบคอมมูนิตี้คาเฟ่สุดชิค ถ่ายรูปสวย บรรยากาศดี",color:"#a16207",image:"https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=600&q=75"},
 ];
 
 const SEASONS={
@@ -956,11 +1153,12 @@ const SEASONS={
 };
 
 /* ── State ── */
-let currentLang='en',currentMoodId=null,currentTab='overview',currentDestId=null,currentCaptionType='romantic',menuOpen=false,compareMode=false,compareList=[];
+let currentLang='en',currentMoodId=null,currentTab='overview',currentDestId=null,currentCaptionType='romantic',menuOpen=false,compareMode=false,compareList=[],currentPlanType='daytrip';
 
 /* ── i18n ── */
 function t(k){return(I18N[currentLang]&&I18N[currentLang][k])||I18N.en[k]||k;}
 function applyTranslations(){
+  buildRegionChips(); // rebuild region labels in current language
   document.querySelectorAll('[data-i18n]').forEach(el=>el.textContent=t(el.getAttribute('data-i18n')));
   document.getElementById('lang-en').classList.toggle('active',currentLang==='en');
   document.getElementById('lang-th').classList.toggle('active',currentLang==='th');
@@ -1117,8 +1315,20 @@ function showResults(moodId){
   const res=DESTINATIONS.filter(d=>d.moods.includes(moodId));
   const label=mood?(currentLang==='th'?mood.labelTh:mood.label):'';
   document.getElementById('results-heading').textContent=mood?`${mood.emoji} ${label}`:'✦ Curated for you';
-  document.getElementById('results-meta').innerHTML=`${t('results.found')} <strong>${res.length}</strong> ${t('results.found2')}`;
-  renderCards('cards-wrap',res);showScreen('results');
+  // Store full results list and reset filters
+  currentResultsDests=[...res];
+  Object.keys(filterState).forEach(k=>filterState[k].clear());
+  // Build region chips for this vibe's destinations
+  buildRegionChips();
+  // Reset all chip active states
+  document.querySelectorAll('.filter-chip.active').forEach(c=>c.classList.remove('active'));
+  updateResetBtn();
+  // Set count
+  const countEl=document.getElementById('results-count');
+  if(countEl) countEl.innerHTML=`<strong>${res.length}</strong> ${currentLang==='th'?'จุดหมาย':'destinations'}`;
+  renderCards('cards-wrap',res);
+  applyView();
+  showScreen('results');
 }
 function getCurrentSeason(){
   const m=new Date().getMonth()+1;
@@ -1164,30 +1374,33 @@ function openModal(destId){
 
   document.getElementById('modal-desc').textContent=desc;
   document.getElementById('section-activities').textContent=t('modal.activities');
-  document.getElementById('modal-activities').innerHTML=acts.map((a,i)=>`<div class="activity-item"><div class="activity-num">${i+1}</div><div class="activity-text">${a}</div></div>`).join('');
-  ['day1','day2'].forEach(day=>{
-    document.getElementById('itin-'+day).innerHTML=(itin[day]||[]).map(e=>`<div class="itin-event"><div class="itin-event-text">${e}</div></div>`).join('');
-  });
+  // Top 5 activities with individual Maps links
+  // Build top-5: base activities (3) + hotspots as extras (fill to 5)
+  const baseActs=currentLang==='th'?(dest.activitiesTh||[]):(dest.activities||[]);
+  const hotspotActs=(dest.hotspots||[]).map(h=>currentLang==='th'
+    ? `เยี่ยมชม ${h.name} (${h.dist})`
+    : `Visit ${h.name} (${h.dist})`);
+  const top5Acts=[...baseActs,...hotspotActs].slice(0,5);
+  document.getElementById('modal-activities').innerHTML=top5Acts.map((a,i)=>{
+    const actQ=encodeURIComponent(a.replace(/^(Morning|Afternoon|Evening|Dawn|Night|เช้า|บ่าย|เย็น|เยี่ยมชม)[:\s]*/i,'')+', '+dest.name+', Thailand');
+    return `<div class="activity-item">
+      <div class="activity-num">${i+1}</div>
+      <div class="activity-text">${a}</div>
+      <span class="act-maps-btn">
+        <a href="https://www.google.com/maps/search/${actQ}" target="_blank" rel="noopener" title="Find on Maps" style="display:flex;align-items:center;justify-content:center;width:28px;height:28px;background:linear-gradient(135deg,#0ea5e9,#0284c7);border-radius:50%;color:#fff;text-decoration:none">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </a>
+      </span>
+    </div>`;
+  }).join('');
+  // init plan designer with default type
+  currentPlanType='daytrip';
+  renderPlan(dest);
   // Tab labels
   document.querySelector('#tab-overview span').textContent=t('modal.tab1');
   document.querySelector('#tab-itinerary span').textContent=t('modal.tab2');
-  document.querySelector('#tab-map span').textContent=t('modal.tab3');
   document.querySelector('#tab-caption span').textContent=t('modal.tab4');
   document.querySelector('#tab-live span').textContent=t('modal.tab5');
-  document.querySelectorAll('.itin-day-label')[0].textContent=t('modal.day1');
-  document.querySelectorAll('.itin-day-label')[1].textContent=t('modal.day2');
-  document.querySelector('[data-i18n="modal.download"]').textContent=t('modal.download');
-  // Map tab
-  document.getElementById('map-bg-img').src=dest.image;
-  document.getElementById('map-dname').textContent=dest.name;
-  document.getElementById('map-dreg').textContent=`${dest.province} · ${dest.region}`;
-  document.getElementById('map-hotspots').innerHTML=(dest.hotspots||[]).map(h=>`
-    <div class="hotspot-item">
-      <div class="hotspot-icon">${h.emoji}</div>
-      <div><div class="hotspot-name">${h.name}</div><div class="hotspot-dist">${h.dist}</div></div>
-    </div>`).join('');
-  const gq=encodeURIComponent(dest.mapSearch||dest.name+' Thailand');
-  document.getElementById('map-gmaps-link').href=`https://www.google.com/maps/search/${gq}`;
   // Caption tab reset
   document.querySelectorAll('.caption-type-btn').forEach((b,i)=>b.classList.toggle('active',i===0));
   currentCaptionType='romantic';generateCaption();
@@ -1203,13 +1416,14 @@ function handleBackdropClick(e){if(e.target===document.getElementById('modal-bac
 /* ── Tabs ── */
 function switchTab(tab){
   currentTab=tab;
-  ['overview','itinerary','map','caption','live'].forEach(id=>{
+  ['overview','itinerary','caption','live'].forEach(id=>{
     const p=document.getElementById('panel-'+id);
     const b=document.getElementById('tab-'+id);
     if(p)p.style.display=tab===id?'block':'none';
     if(b)b.className=`tab-btn ${tab===id?'active':'inactive'}`;
   });
   if(tab==='live')loadLiveData();
+  if(tab==='itinerary'){const d=DESTINATIONS.find(x=>x.id===currentDestId);if(d)renderPlan(d);}
   safeIcons();
 }
 
@@ -1242,18 +1456,36 @@ function copyCaption(){
 /* ── Share Card ── */
 function openShareCard(){
   const dest=DESTINATIONS.find(d=>d.id===currentDestId);if(!dest)return;
-  const itin=currentLang==='th'?dest.itineraryTh:dest.itinerary;
+  const plan=buildPlanData(dest, currentPlanType||'2d1n');
   const tagline=currentLang==='th'?dest.taglineTh:dest.tagline;
+  // Plan type label map
+  const planLabels={daytrip:currentLang==='th'?'Day Trip':'Day Trip','2d1n':currentLang==='th'?'2 วัน 1 คืน':'2 Days 1 Night','3d2n':currentLang==='th'?'3 วัน 2 คืน':'3 Days 2 Nights','4d3n':currentLang==='th'?'4 วัน 3 คืน':'4 Days 3 Nights'};
+  const planLabel=planLabels[currentPlanType||'2d1n'];
+
   document.getElementById('sc-img').src=dest.image;
-  document.getElementById('sc-name').textContent=dest.name;
+  document.getElementById('sc-name').textContent=dest.name+(currentLang==='th'&&dest.nameTh?' · '+dest.nameTh:'');
   document.getElementById('sc-tagline').textContent=tagline;
   document.getElementById('sc-meta').textContent=dest.province+' · '+dest.region+' Thailand';
-  ['day1','day2'].forEach(day=>{
-    document.getElementById('sc-'+day).innerHTML=(itin[day]||[]).map(e=>`<div class="sc-event">${e}</div>`).join('');
+  // Update share card itin title dynamically
+  const itinTitleEl=document.querySelector('[data-i18n="share.itin"]');
+  if(itinTitleEl) itinTitleEl.textContent=planLabel.toUpperCase()+' ITINERARY';
+
+  // Populate days dynamically based on plan
+  // The share card HTML has sc-day1/sc-day2 fixed slots — we rebuild it fully
+  const scCard=document.getElementById('share-card');
+  // Remove old day divs (after sc-divider)
+  const oldDays=scCard.querySelectorAll('.sc-day-dynamic');
+  oldDays.forEach(el=>el.remove());
+  // Find insertion point: after sc-itin-title
+  const itinTitleNode=scCard.querySelector('[data-i18n="share.itin"]');
+  let dayHTML='';
+  (plan.days||[]).forEach((day,i)=>{
+    dayHTML+=`<div class="sc-day-dynamic" style="margin-top:${i>0?'10px':'8px'}">
+      <p class="sc-day-label">${day.label}</p>
+      ${day.events.map(ev=>`<div class="sc-event">${ev.text}</div>`).join('')}
+    </div>`;
   });
-  document.querySelectorAll('[data-i18n="modal.day1"]').forEach(el=>el.textContent=t('modal.day1'));
-  document.querySelectorAll('[data-i18n="modal.day2"]').forEach(el=>el.textContent=t('modal.day2'));
-  document.querySelector('[data-i18n="share.itin"]').textContent=t('share.itin');
+  if(itinTitleNode) itinTitleNode.insertAdjacentHTML('afterend',dayHTML);
   document.getElementById('share-backdrop').classList.add('open');
   safeIcons();
 }
@@ -1262,20 +1494,24 @@ function handleShareBackdrop(e){if(e.target===document.getElementById('share-bac
 
 function printShareCard(){
   const dest=DESTINATIONS.find(d=>d.id===currentDestId);if(!dest)return;
-  const itin=currentLang==='th'?dest.itineraryTh:dest.itinerary;
+  const plan=buildPlanData(dest, currentPlanType||'2d1n');
   const tagline=currentLang==='th'?dest.taglineTh:dest.tagline;
-  const w=window.open('','_blank','width=560,height=820');
+  const planLabels={daytrip:'Day Trip','2d1n':'2 Days 1 Night','3d2n':'3 Days 2 Nights','4d3n':'4 Days 3 Nights'};
+  const planLabel=planLabels[currentPlanType||'2d1n'];
+  const daysHTML=(plan.days||[]).map(day=>`
+  <div class="dl">${day.label} <span style="font-size:.65rem;color:rgba(253,230,138,.4);font-weight:400">${day.type}</span></div>
+  ${day.events.map(ev=>`<div class="ev"><span style="background:rgba(245,158,11,.15);color:#f59e0b;padding:1px 5px;border-radius:4px;font-size:.62rem;margin-right:6px">${ev.time}</span>${ev.text}</div>`).join('')}`).join('<br/>');
+  const w=window.open('','_blank','width=560,height=900');
   w.document.write(`<!DOCTYPE html><html><head><meta charset="UTF-8"><title>${dest.name} — ThaiVibe Explorer</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Sarabun:wght@400;600&display=swap" rel="stylesheet">
-  <style>body{margin:0;font-family:'Sarabun',sans-serif;background:#1a0a00}.card{max-width:480px;margin:0 auto;padding:30px;background:linear-gradient(145deg,#1a0a00,#2d1506 60%,#0e2419);min-height:100vh}img{width:100%;height:170px;object-fit:cover;border-radius:13px;margin-bottom:16px}.ey{font-size:9px;letter-spacing:4px;color:#f59e0b;text-transform:uppercase;margin-bottom:6px;font-family:'Cormorant Garamond',serif}h1{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:700;color:#fef3c7;margin:0 0 6px}.tl{color:rgba(253,230,138,.68);font-size:.87rem;margin-bottom:16px}hr{border:none;border-top:1px solid rgba(245,158,11,.2);margin:14px 0}.it{font-size:.68rem;letter-spacing:3px;color:rgba(253,230,138,.45);text-transform:uppercase;margin-bottom:12px}.dl{color:#f59e0b;font-size:.75rem;font-weight:700;margin:10px 0 6px;font-family:'Cormorant Garamond',serif}.ev{color:rgba(253,230,138,.75);font-size:.77rem;line-height:1.55;padding-left:10px;border-left:2px solid rgba(245,158,11,.35);margin-bottom:5px}.ft{display:flex;justify-content:space-between;margin-top:18px;padding-top:12px;border-top:1px solid rgba(245,158,11,.18)}.br{font-family:'Cormorant Garamond',serif;font-size:.95rem;font-weight:700;color:rgba(253,230,138,.45)}.br span{color:#f59e0b}.mt{color:rgba(253,230,138,.35);font-size:.67rem}@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}}</style></head><body>
+  <style>body{margin:0;font-family:'Sarabun',sans-serif;background:#1a0a00}.card{max-width:480px;margin:0 auto;padding:28px;background:linear-gradient(145deg,#1a0a00,#2d1506 60%,#0e2419);min-height:100vh}img{width:100%;height:155px;object-fit:cover;border-radius:13px;margin-bottom:14px}.ey{font-size:9px;letter-spacing:4px;color:#f59e0b;text-transform:uppercase;margin-bottom:5px;font-family:'Cormorant Garamond',serif}h1{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;color:#fef3c7;margin:0 0 5px}.tl{color:rgba(253,230,138,.68);font-size:.84rem;margin-bottom:14px}hr{border:none;border-top:1px solid rgba(245,158,11,.2);margin:12px 0}.it{font-size:.65rem;letter-spacing:3px;color:rgba(253,230,138,.45);text-transform:uppercase;margin-bottom:10px}.dl{color:#f59e0b;font-size:.8rem;font-weight:700;margin:12px 0 5px;font-family:'Cormorant Garamond',serif}.ev{color:rgba(253,230,138,.78);font-size:.76rem;line-height:1.55;padding-left:10px;border-left:2px solid rgba(245,158,11,.3);margin-bottom:5px}.ft{display:flex;justify-content:space-between;margin-top:16px;padding-top:10px;border-top:1px solid rgba(245,158,11,.18)}.br{font-family:'Cormorant Garamond',serif;font-size:.9rem;font-weight:700;color:rgba(253,230,138,.45)}.br span{color:#f59e0b}.mt{color:rgba(253,230,138,.35);font-size:.66rem}@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}}</style></head><body>
   <div class="card">
   <img src="${dest.image}" alt="${dest.name}"/>
   <div class="ey">Discover Thailand</div>
-  <h1>${dest.name}</h1>
+  <h1>${dest.name}${currentLang==='th'&&dest.nameTh?' · '+dest.nameTh:''}</h1>
   <p class="tl">${tagline}</p><hr>
-  <div class="it">2 DAYS · 1 NIGHT ITINERARY</div>
-  <div class="dl">Day 1</div>${(itin.day1||[]).map(e=>`<div class="ev">${e}</div>`).join('')}
-  <div class="dl">Day 2</div>${(itin.day2||[]).map(e=>`<div class="ev">${e}</div>`).join('')}
+  <div class="it">${planLabel.toUpperCase()} ITINERARY</div>
+  ${daysHTML}
   <div class="ft"><span class="br">Thai<span>Vibe</span> Explorer</span><span class="mt">${dest.province} · ${dest.region}</span></div>
   </div></body></html>`);
   w.document.close();setTimeout(()=>w.print(),400);
@@ -1547,6 +1783,348 @@ function handleDeepLink(){
    SAVED SCREEN TRIGGER (called from showScreen)
 ══════════════════════════════════════════════ */
 // renderSavedScreen is called by the patched showScreen below
+
+
+/* ══════════════════════════════════════════════════════
+   PLAN DESIGNER ENGINE
+   Generates 4 plan types from existing + extended data
+══════════════════════════════════════════════════════ */
+
+// Structured plan data generator — builds day-by-day plans from dest data
+function buildPlanData(dest, planType){
+  const isTh = currentLang === 'th';
+  const itin  = isTh ? dest.itineraryTh : dest.itinerary;
+  const name  = dest.name;
+  const loc   = dest.province;
+  const mapsQ = encodeURIComponent((dest.mapSearch || name) + ' Thailand');
+
+  // Day-trip: single day condensed from day1 of existing itinerary
+  if(planType === 'daytrip'){
+    const events = (itin.day1 || []).slice(0, 4).map(e => ({text: e, time: guessTime(e)}));
+    return {
+      title: isTh ? `Day Trip — ${dest.nameTh || name}` : `Day Trip — ${name}`,
+      days:[{
+        label: isTh ? 'วัน Trip' : 'Trip Day',
+        type:  isTh ? 'ออกเดินทางเช้า กลับเย็น' : 'Out & back in a day',
+        events,
+        mapsUrl: `https://www.google.com/maps/search/${mapsQ}`,
+      }],
+      tip: isTh
+        ? `เหมาะสำหรับเดินทางจากเมืองใกล้เคียง ออกเดินทางก่อน 7 โมงเช้าเพื่อให้มีเวลาเต็มวัน`
+        : `Best if you leave by 7am from a nearby city to make the most of the day.`,
+      mapsUrl: `https://www.google.com/maps/dir/?api=1&destination=${mapsQ}`,
+    };
+  }
+
+  // 2D1N: use existing day1 + day2
+  if(planType === '2d1n'){
+    return {
+      title: isTh ? `2 วัน 1 คืน — ${dest.nameTh || name}` : `2 Days 1 Night — ${name}`,
+      days:[
+        {label: isTh ? 'วันที่ 1' : 'Day 1', type: isTh ? 'เดินทางและสำรวจ' : 'Arrive & Explore',
+         events: (itin.day1||[]).map(e=>({text:e,time:guessTime(e)})),
+         mapsUrl: `https://www.google.com/maps/search/${mapsQ}`},
+        {label: isTh ? 'วันที่ 2' : 'Day 2', type: isTh ? 'สำรวจและเดินทางกลับ' : 'Explore & Depart',
+         events: (itin.day2||[]).map(e=>({text:e,time:guessTime(e)})),
+         mapsUrl: `https://www.google.com/maps/search/${mapsQ}`},
+      ],
+      tip: isTh ? `จอง ${dest.nameTh||name} ล่วงหน้าในช่วง ${dest.bestTime} เพื่อให้ได้ที่พักที่ดีที่สุด`
+                : `Book accommodation in advance during ${dest.bestTime} — this is peak season.`,
+      mapsUrl: buildRouteUrl(dest),
+    };
+  }
+
+  // 3D2N: expand with extra activities
+  if(planType === '3d2n'){
+    const acts  = isTh ? (dest.activitiesTh||[]) : (dest.activities||[]);
+    const spots = (dest.hotspots||[]);
+    const extra = spots.slice(0,3).map((h,i)=>{
+      const prefix = isTh
+        ? ['เช้า:','บ่าย:','เย็น:'][i]||'กิจกรรม:'
+        : ['Morning:','Afternoon:','Evening:'][i]||'Activity:';
+      return { text: `${prefix} ${h.name} — ${h.dist}`, time: ['09:00','14:00','17:00'][i]||'Flexible' };
+    });
+    return {
+      title: isTh ? `3 วัน 2 คืน — ${dest.nameTh||name}` : `3 Days 2 Nights — ${name}`,
+      days:[
+        {label: isTh ? 'วันที่ 1' : 'Day 1', type: isTh ? 'เดินทาง + ปรับตัว' : 'Travel & Settle In',
+         events: (itin.day1||[]).slice(0,3).map(e=>({text:e,time:guessTime(e)})),
+         mapsUrl: `https://www.google.com/maps/dir/?api=1&destination=${mapsQ}`},
+        {label: isTh ? 'วันที่ 2' : 'Day 2', type: isTh ? 'สำรวจเชิงลึก' : 'Deep Exploration',
+         events: (itin.day2||[]).slice(0,3).map(e=>({text:e,time:guessTime(e)})).concat(extra.slice(0,1)),
+         mapsUrl: `https://www.google.com/maps/search/${mapsQ}`},
+        {label: isTh ? 'วันที่ 3' : 'Day 3', type: isTh ? 'กิจกรรมพิเศษ + เดินทางกลับ' : 'Bonus Activities & Depart',
+         events: extra.slice(1).concat([{text: isTh?'เช็คเอาท์และเดินทางกลับ':'Check out & head home', time:'11:00'}]),
+         mapsUrl: `https://www.google.com/maps/search/${mapsQ}`},
+      ],
+      tip: isTh
+        ? `วันที่ 3 เป็นวันยืดหยุ่น — ใช้สำหรับกิจกรรมที่คุณพลาดไปหรือเที่ยวระหว่างทางกลับ`
+        : `Day 3 is flexible — use it for anything you missed, or stop somewhere on the way home.`,
+      mapsUrl: buildRouteUrl(dest),
+    };
+  }
+
+  // 4D3N: full immersive plan
+  if(planType === '4d3n'){
+    const acts  = isTh ? (dest.activitiesTh||[]) : (dest.activities||[]);
+    const spots = (dest.hotspots||[]);
+    const allActs = acts.slice(0,5).map((a,i)=>{
+      const timeSlots=['09:00','10:30','14:00','15:30','17:00'];
+      return {text: a, time: timeSlots[i]||'Flexible'};
+    });
+    return {
+      title: isTh ? `4 วัน 3 คืน — ${dest.nameTh||name}` : `4 Days 3 Nights — ${name}`,
+      days:[
+        {label: isTh ? 'วันที่ 1' : 'Day 1', type: isTh ? 'เดินทาง + เช็คอิน + เดินสำรวจ' : 'Arrive · Check in · First walk',
+         events: (itin.day1||[]).slice(0,3).map(e=>({text:e,time:guessTime(e)})),
+         mapsUrl: `https://www.google.com/maps/dir/?api=1&destination=${mapsQ}`},
+        {label: isTh ? 'วันที่ 2' : 'Day 2', type: isTh ? 'ไฮไลต์หลัก' : 'Main Highlights',
+         events: allActs.slice(0,3),
+         mapsUrl: `https://www.google.com/maps/search/${mapsQ}`},
+        {label: isTh ? 'วันที่ 3' : 'Day 3', type: isTh ? 'สำรวจซอกหลืบ + ผ่อนคลาย' : 'Off-Beaten Paths & Relax',
+         events: (itin.day2||[]).slice(0,2).map(e=>({text:e,time:guessTime(e)})).concat(allActs.slice(3,5)),
+         mapsUrl: `https://www.google.com/maps/search/${mapsQ}`},
+        {label: isTh ? 'วันที่ 4' : 'Day 4', type: isTh ? 'ช้าๆ + เดินทางกลับ' : 'Slow Morning & Depart',
+         events:[
+           {text: isTh ? 'เช้า: อาหารเช้าช้าๆ และเดินเล่นครั้งสุดท้าย' : 'Morning: Slow breakfast & final wander', time:'08:00'},
+           {text: isTh ? 'สาย: เช็คเอาท์ ซื้อของที่ระลึก' : 'Late morning: Check out & souvenirs', time:'10:30'},
+           {text: isTh ? 'บ่าย: เดินทางกลับ' : 'Afternoon: Head home', time:'13:00'},
+         ],
+         mapsUrl: `https://www.google.com/maps/search/${mapsQ}`},
+      ],
+      tip: isTh
+        ? `4 วันให้เวลาพอที่จะสำรวจทั้งไฮไลต์และจุดลับ รวมถึงมีวันผ่อนคลายที่ไม่รีบร้อน`
+        : `4 days gives you enough time for both highlights and hidden spots, with room to breathe.`,
+      mapsUrl: buildRouteUrl(dest),
+    };
+  }
+  return null;
+}
+
+// Guess time string from event prefix
+function guessTime(eventText){
+  const e = eventText.toLowerCase();
+  if(e.startsWith('2am')||e.startsWith('ตี 2')) return '02:00';
+  if(e.startsWith('3am')||e.startsWith('ตี 3')) return '03:00';
+  if(e.startsWith('4am')||e.startsWith('ตี 4')) return '04:00';
+  if(e.startsWith('dawn')||e.startsWith('รุ่งเช้า')) return '05:30';
+  if(e.startsWith('morning')||e.startsWith('เช้า')) return '08:00';
+  if(e.startsWith('11pm')||e.startsWith('23.00')) return '23:00';
+  if(e.startsWith('late morning')||e.startsWith('สาย')) return '10:00';
+  if(e.startsWith('afternoon')||e.startsWith('บ่าย')) return '13:00';
+  if(e.startsWith('evening')||e.startsWith('เย็น')) return '17:30';
+  if(e.startsWith('night')||e.startsWith('กลางคืน')) return '20:00';
+  return '—';
+}
+
+// Build Google Maps multi-stop route URL from hotspots
+function buildRouteUrl(dest){
+  const q = encodeURIComponent((dest.mapSearch||dest.name)+' Thailand');
+  const spots = (dest.hotspots||[]).slice(0,3);
+  if(!spots.length) return `https://www.google.com/maps/dir/?api=1&destination=${q}`;
+  const waypoints = spots.slice(0,-1).map(h=>encodeURIComponent(h.name+', '+(dest.province||'')+', Thailand')).join('|');
+  const dest_enc  = encodeURIComponent(spots[spots.length-1].name+', '+(dest.province||'')+', Thailand');
+  const origin    = encodeURIComponent(dest.name+', Thailand');
+  let url = `https://www.google.com/maps/dir/?api=1&origin=${origin}&destination=${dest_enc}`;
+  if(waypoints) url += `&waypoints=${waypoints}`;
+  return url;
+}
+
+// Render the plan designer panel
+function renderPlan(dest){
+  const plan = buildPlanData(dest, currentPlanType);
+  if(!plan){ document.getElementById('plan-body').innerHTML=''; return; }
+  const isTh = currentLang === 'th';
+
+  let html = `<div class="plan-body">`;
+  html += `<div class="plan-route-header">
+    <span class="plan-route-title">${plan.title}</span>
+    <a href="${plan.mapsUrl}" target="_blank" rel="noopener" class="btn-plan-maps">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      ${t('plan.open.maps')}
+    </a>
+  </div>`;
+
+  plan.days.forEach((day, di) => {
+    html += `<div class="plan-day-card">
+      <div class="plan-day-header">
+        <span class="plan-day-label">${day.label}</span>
+        <span class="plan-day-type">${day.type}</span>
+      </div>
+      <div class="plan-day-body">`;
+    day.events.forEach((ev, ei) => {
+      const actQ = encodeURIComponent(ev.text.replace(/^(Morning|Afternoon|Evening|Dawn|Night|เช้า|บ่าย|เย็น|กลางคืน|รุ่งเช้า)[:\s]*/i,'') + ', ' + dest.name + ', Thailand');
+      html += `<div class="plan-event">
+        <span class="plan-event-time">${ev.time}</span>
+        <span class="plan-event-text">${ev.text}</span>
+        <span class="plan-event-map">
+          <a href="https://www.google.com/maps/search/${actQ}" target="_blank" rel="noopener" title="Find on Maps">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </a>
+        </span>
+      </div>`;
+    });
+    // Day-specific Maps link
+    html += `<div class="plan-divider"></div>
+      <a href="${day.mapsUrl}" target="_blank" rel="noopener" class="btn-plan-maps" style="font-size:.72rem;padding:5px 11px">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        ${isTh ? `เปิด ${day.label} ใน Maps` : `Open ${day.label} in Maps`}
+      </a>
+      </div></div>`;
+  });
+
+  // Local tip
+  html += `<div class="plan-tip">
+    <span class="plan-tip-icon">💡</span>
+    <span class="plan-tip-text"><strong>${t('plan.tip.label')}:</strong> ${plan.tip}</span>
+  </div>`;
+
+  // Action row
+  html += `<div class="plan-action-row">
+    <button class="btn-download" onclick="openShareCard()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      ${t('plan.download')}
+    </button>
+    <button class="btn-copylink" onclick="copyPlanRoute('${plan.mapsUrl.replace(/'/g,"\\'")}')">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+      ${t('plan.copy.route')}
+    </button>
+  </div>`;
+
+  html += `</div>`;
+  document.getElementById('plan-body').innerHTML = html;
+}
+
+// Plan type selector
+function selectPlanType(type, btn){
+  currentPlanType = type;
+  document.querySelectorAll('.plan-type-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const dest = DESTINATIONS.find(d => d.id === currentDestId);
+  if(dest) renderPlan(dest);
+}
+
+// Copy plan route URL
+function copyPlanRoute(url){
+  navigator.clipboard.writeText(url)
+    .then(()=>showToast('🗺️ Route link copied!'))
+    .catch(()=>showToast('Copy failed'));
+}
+
+/* ══════════════════════════════════════════════════════
+   FILTER BAR ENGINE
+══════════════════════════════════════════════════════ */
+// Filter state: { region: Set, budget: Set, season: Set, eco: Set }
+const filterState = { region: new Set(), budget: new Set(), season: new Set(), eco: new Set() };
+let currentView = 'grid'; // 'grid' | 'list'
+let currentResultsDests = []; // keep full list for re-filtering
+
+// All unique regions from data — built dynamically
+function getRegions(){
+  return [...new Set(DESTINATIONS.map(d=>d.region))].sort();
+}
+
+// Build region chips dynamically (language-aware)
+function buildRegionChips(){
+  const container = document.getElementById('chips-region');
+  if(!container) return;
+  const regionEmojis = {North:'🏔️', South:'🏝️', Central:'🏛️', Northeast:'🌾', East:'💎'};
+  const regionTh = {North:'ภาคเหนือ', South:'ภาคใต้', Central:'ภาคกลาง', Northeast:'ภาคอีสาน', East:'ภาคตะวันออก'};
+  container.innerHTML = getRegions().map(r => {
+    const label = currentLang==='th' ? (regionTh[r]||r) : r;
+    const active = filterState.region.has(r) ? 'active' : '';
+    return `<button class="filter-chip ${active}" data-filter="region" data-val="${r}" onclick="toggleFilter('region','${r}',this)">
+      <span class="filter-chip-icon">${regionEmojis[r]||'📍'}</span> ${label}
+    </button>`;
+  }).join('');
+}
+
+// Toggle a filter chip on/off
+function toggleFilter(group, val, btn){
+  const s = filterState[group];
+  if(s.has(val)){
+    s.delete(val);
+    btn.classList.remove('active');
+  } else {
+    s.add(val);
+    btn.classList.add('active');
+  }
+  applyFilters();
+  updateResetBtn();
+}
+
+// Reset all filters
+function resetFilters(){
+  Object.keys(filterState).forEach(k => filterState[k].clear());
+  document.querySelectorAll('.filter-chip.active').forEach(c => c.classList.remove('active'));
+  updateResetBtn();
+  applyFilters();
+}
+function updateResetBtn(){
+  const hasAny = Object.values(filterState).some(s => s.size > 0);
+  const btn = document.getElementById('filter-reset-btn');
+  if(btn) btn.classList.toggle('hidden', !hasAny);
+}
+
+// Apply current filters to currentResultsDests and re-render
+function applyFilters(){
+  let results = [...currentResultsDests];
+
+  if(filterState.region.size)
+    results = results.filter(d => filterState.region.has(d.region));
+  if(filterState.budget.size)
+    results = results.filter(d => filterState.budget.has(String(d.budget_level)));
+  if(filterState.season.size)
+    results = results.filter(d => (d.season||[]).some(s => filterState.season.has(s)));
+  if(filterState.eco.size)
+    results = results.filter(d => d.eco_friendly === true);
+
+  // Update count
+  const countEl = document.getElementById('results-count');
+  if(countEl){
+    const total = currentResultsDests.length;
+    const shown = results.length;
+    const isTh = currentLang === 'th';
+    if(shown === total){
+      countEl.innerHTML = `<strong>${total}</strong> ${isTh ? 'จุดหมาย' : 'destinations'}`;
+    } else {
+      countEl.innerHTML = isTh
+        ? `${t('filter.showing')} <strong>${shown}</strong> ${t('filter.of')} ${total} ${t('filter.results')}`
+        : `${t('filter.showing')} <strong>${shown}</strong> of ${total} destinations`;
+    }
+  }
+
+  if(!results.length){
+    const wrap = document.getElementById('cards-wrap');
+    if(wrap) wrap.innerHTML = `<div class="filter-no-results">
+      <div class="filter-no-results-icon">🔍</div>
+      <p class="filter-no-results-text">
+        <strong>${t('filter.no.results')}</strong><br>${t('filter.no.results.sub')}
+      </p>
+      <button class="filter-no-results-btn" onclick="resetFilters()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-3.51"/></svg>
+        ${t('filter.reset')}
+      </button>
+    </div>`;
+    return;
+  }
+
+  renderCards('cards-wrap', results);
+  applyView();
+}
+
+// View toggle (grid / list)
+function setView(v){
+  currentView = v;
+  document.getElementById('view-grid').classList.toggle('active', v==='grid');
+  document.getElementById('view-list').classList.toggle('active', v==='list');
+  applyView();
+}
+function applyView(){
+  const wrap = document.getElementById('cards-wrap');
+  if(!wrap) return;
+  wrap.classList.toggle('list-view', currentView==='list');
+}
 
 document.addEventListener('keydown',e=>{
   if(e.key==='Escape'){
